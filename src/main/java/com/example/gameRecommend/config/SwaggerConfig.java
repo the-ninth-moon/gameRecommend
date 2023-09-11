@@ -22,7 +22,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .enable(true) //配置是否启用Swagger，如果是false，在浏览器将无法访问
                 .select()// 通过.select()方法，去配置扫描接口,RequestHandlerSelectors配置如何扫描接口
-                .apis(RequestHandlerSelectors.basePackage("com.example.vueblog.controller")).build();
+                .apis(RequestHandlerSelectors.basePackage("com.example.gameRecommend.controller")).build();
     }
 
     //配置swagger信息 apiInfo

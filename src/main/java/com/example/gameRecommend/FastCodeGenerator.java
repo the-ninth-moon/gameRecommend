@@ -24,7 +24,7 @@ public class FastCodeGenerator {
 
     // 基础信息配置
     // 数据库连接字符
-    private static final String URL = "jdbc:mysql://localhost:3306/blog?useUnicode=true&serverTimezone=UTC&useSSL=false&characterEncoding=utf8";
+    private static final String URL = "jdbc:mysql://localhost:3306/game_recommend?useUnicode=true&serverTimezone=UTC&useSSL=false&characterEncoding=utf8";
     // 数据库用户名
     private static final String USERNAME = "root";
     // 数据库密码
