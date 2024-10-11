@@ -1,6 +1,6 @@
 .DS_Store
-gameReVue/node_modules/
-gameReVue/dist/
+node_modules/
+dist/
 
 
 # local env files
