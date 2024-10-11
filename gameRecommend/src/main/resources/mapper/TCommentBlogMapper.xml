@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.gameRecommend.mapper.CommentBlogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.gameRecommend.entity.CommentBlog">
+        <id column="id" property="id" />
+        <result column="blogId" property="blogId" />
+        <result column="userId" property="userId" />
+        <result column="content" property="content" />
+        <result column="create_time" property="createTime" />
+        <result column="parent_comment_id" property="parentCommentId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, blogId, userId, content, create_time, parent_comment_id
+    </sql>
+    <!--添加评论-->
+    <insert id="saveComment" parameterType="com.example.gameRecommend.entity.CommentBlog">
+        insert into t_comment_blog (id,blogId,userId,content,create_time,parent_comment_id)
+        values (#{id},#{blogId},#{userId},#{content},#{createTime},#{parentCommentId});
+    </insert>
+
+    <!--查询父级评论-->
+    <select id="findByBlogIdParentIdNull" resultType="com.example.gameRecommend.entity.CommentBlog">
+        select *
+        from t_comment_blog c
+        where c.blogId = #{blogId} and c.parent_comment_id = #{ParentId}
+        order by c.create_time desc
+    </select>
+
+    <!--查询一级子评论-->
+    <select id="findByBlogIdParentIdNotNull" resultType="com.example.gameRecommend.entity.CommentBlog">
+        select *
+        from t_comment_blog c
+        where c.blogId = #{id} and c.parent_comment_id = #{blogId}
+        order by c.create_time desc
+    </select>
+
+    <!--查询二级子评论-->
+    <select id="findByBlogIdAndReplayId" resultType="com.example.gameRecommend.entity.CommentBlog">
+        select *
+        from t_comment_blog c
+        where c.blogId = #{childId} and c.parent_comment_id = #{blogId}
+        order by c.create_time desc
+    </select>
+
+    <!--删除评论-->
+    <delete id="deleteComment" >
+        delete from t_comment_blog where id = #{id}
+    </delete>
+</mapper>

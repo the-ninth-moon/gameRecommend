@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.gameRecommend.mapper.CommentGameMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.gameRecommend.entity.CommentGame">
+        <id column="id" property="id" />
+        <result column="gameId" property="gameId" />
+        <result column="userId" property="userId" />
+        <result column="content" property="content" />
+        <result column="create_time" property="createTime" />
+        <result column="parent_comment_id" property="parentCommentId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, gameId, userId, content, create_time, parent_comment_id
+    </sql>
+
+
+    <!--添加评论-->
+    <insert id="saveComment" parameterType="com.example.gameRecommend.entity.CommentGame">
+        insert into t_comment_game (id,gameId,userId,content,create_time,parent_comment_id)
+        values (#{id},#{gameId},#{userId},#{content},#{createTime},#{parent_comment_id});
+    </insert>
+<!--    &#45;&#45;nmd这里是映射啊-->
+
+    <!--查询父级评论-->
+    <select id="findByGameIdParentIdNull" resultType="com.example.gameRecommend.entity.CommentGame">
+        select *
+        from t_comment_game c
+        where c.gameId = #{gameId}
+        order by c.create_time desc
+    </select>
+
+    <!--查询一级子评论-->
+    <select id="findByGameIdParentIdNotNull" resultType="com.example.gameRecommend.entity.CommentGame">
+        select *
+        from t_comment_game c
+        where c.gameId = #{id} and c.parent_comment_id = #{gameId}
+        order by c.create_time desc
+    </select>
+
+    <!--查询二级子评论-->
+    <select id="findByGameIdAndReplayId" resultType="com.example.gameRecommend.entity.CommentGame">
+        select *
+        from t_comment_game c
+        where c.gameId = #{childId} and c.parent_comment_id = #{gameId}
+        order by c.create_time desc
+    </select>
+
+    <!--删除评论-->
+    <delete id="deleteComment" >
+        delete from t_comment_game where id = #{id}
+    </delete>
+
+</mapper>

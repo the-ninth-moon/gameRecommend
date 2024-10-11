@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.gameRecommend.mapper.GameMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.gameRecommend.entity.Game">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="typeId" property="typeId" />
+        <result column="developer" property="developer" />
+        <result column="sell_time" property="sellTime" />
+        <result column="collect_time" property="collectTime" />
+        <result column="platform" property="platform" />
+        <result column="official_web" property="officialWeb" />
+        <result column="score" property="score" />
+        <result column="description" property="description" />
+        <result column="game_content" property="gameContent" />
+        <result column="config_require" property="configRequire" />
+        <result column="first_picture" property="firstPicture" />
+        <result column="imgListID" property="imgListID" />
+        <result column="published" property="published" />
+        <result column="share_statement" property="shareStatement" />
+        <result column="is_delete" property="isDelete" />
+        <result column="recommend" property="recommend" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, typeId, developer, sell_time, collect_time, platform, official_web, score, description, game_content, config_require, first_picture,  published, share_statement, is_delete, recommend, update_time
+    </sql>
+
+    <!--根据id查找游戏并使用自定义映射文件-->
+    <select id="getByGameId" resultMap="BaseResultMap">
+        select * from t_game
+        where id = #{id}
+    </select>
+
+    <select id="getGameIdByName" resultMap="BaseResultMap">
+        select id from t_game
+        where name = #{name}
+    </select>
+</mapper>

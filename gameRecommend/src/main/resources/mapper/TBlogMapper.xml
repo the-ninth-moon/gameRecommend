@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.gameRecommend.mapper.BlogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.gameRecommend.entity.Blog">
+        <id column="id" property="id" />
+        <result column="game_id" property="gameId" />
+        <result column="userId" property="userId" />
+        <result column="title" property="title" />
+        <result column="description" property="description" />
+        <result column="first_picture" property="firstPicture" />
+        <result column="content" property="content" />
+        <result column="original" property="original" />
+        <result column="published" property="published" />
+        <result column="processed" property="processed" />
+        <result column="share_statement" property="shareStatement" />
+        <result column="isDelete" property="isDelete" />
+        <result column="recommend" property="recommend" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, game_id, userId, title, description, first_picture, content, original, published, processed, share_statement, isDelete, recommend, update_time
+    </sql>
+
+    <!--根据id查找博客并使用自定义映射文件-->
+    <select id="getByBlogId" resultMap="BaseResultMap">
+        select * from t_blog bt
+
+        where id = #{id}
+    </select>
+
+    <select id="process" resultMap="BaseResultMap">
+        update t_blog set processed=(case processed when 0 then 1 when 1 then 0 else 0 end)
+
+        where id = #{id}
+    </select>
+
+</mapper>
