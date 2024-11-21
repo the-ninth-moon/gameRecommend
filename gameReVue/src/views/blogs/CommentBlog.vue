@@ -165,7 +165,7 @@ export default {
       const _this = this
       let resp = await this.getRequest('/commentBlog/getCommentByPage?current=' + this.currentPage + '&size=' + this.pagesize)
         console.log(resp)
-        _this.commentData = resp.records
+        _this.commentData = resp.data.records
         _this.total = resp.total
 
     },

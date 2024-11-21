@@ -39,7 +39,7 @@
     <div class="blog-list">
       <div v-for="blog in blogsData" :key="blog.id" class="blog-card">
         <div class="blog-image-wrapper">
-          <img :src="blog.first_picture" alt="Blog Image" class="blog-image" />
+          <img :src="blog.firstPicture" alt="Blog Image" class="blog-image" />
         </div>
         <div class="blog-info">
           <h3 class="blog-title">{{ blog.title }}</h3>
@@ -73,7 +73,6 @@
       this.initBanner();
     },
     methods: {
-
       initGames() {
         const baseurl = `/game/getByPage?current=${this.currentPage}&size=${this.pagesize}&published=1&share_statement=1&is_delete=0`;
         this.getRequest(baseurl).then(resp => {

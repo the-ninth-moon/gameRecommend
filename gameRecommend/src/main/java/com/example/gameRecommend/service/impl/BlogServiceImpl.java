@@ -30,7 +30,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
 
     @Override
     public Result pageBlogs(Long current, Long limit, Boolean published, Boolean processed, String original,
-                              Boolean share_statement, Boolean isDelete) {
+                              Boolean share_statement, Boolean isDelete,Long typeId) {
         Result result = Result.build();
         //创建Page对象
         Page<Blog> tBlogPage = new Page<>(current,limit);
@@ -59,9 +59,14 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
             //构建条件
             wrapper.eq("isDelete",isDelete);
         }
+        if(typeId != null &&typeId == 9){
+            wrapper.orderByDesc("views");
+        }
+        else{
+            //以更新时间排序（降序）
+            wrapper.orderByDesc("update_time");
+        }
 
-        //以更新时间排序（降序）
-        wrapper.orderByDesc("update_time");
 
         //调用mybatis plus分页方法进行查询
         tBlogMapper.selectPage(tBlogPage,wrapper);

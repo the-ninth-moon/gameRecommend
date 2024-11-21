@@ -8,7 +8,7 @@
         :key="index"
         class="blog-card"
     >
-        <img :src="blog.first_picture" alt="Blog Cover" class="blog-cover" />
+        <img :src="blog.firstPicture" alt="Blog Cover" class="blog-cover" />
         <div class="blog-content">
         <h3>{{ blog.title }}</h3>
         <p class="blog-date">{{ formatDate(blog.updateTime) }}</p>
@@ -40,15 +40,16 @@ export default {
 inject: ['postKeyValueRequest', 'postRequest', 'putRequest', 'getRequest', 'deleteRequest'],
 name: 'pBlogsShowerListCom',
 data() {
-    return {
-    blogsData: [], // 文章数据
-    currentPage: 1, // 当前页
-    total: 0, // 总记录数
-    pagesize: 12, // 页面大小
-    pagesizes: [12, 24, 36], // 页面数组
-    t2index: 0, // 选项卡 index
-    };
-},
+      return {
+        blogsData: [], // 文章数据
+        currentPage: 1, // 当前页
+        total: 0, // 总记录数
+        pagesize: 12, // 页面大小
+        pagesizes: [12, 24, 36], // 页面数组
+        t2index: 0, // 选项卡 index
+        sortType: 0, // 当前排序类型（0: 按时间, 9: 按热度）
+      };
+    },
 props: ["tindex"],
 mounted() {
     this.initIndex();
@@ -57,17 +58,21 @@ mounted() {
 methods: {
     initIndex() {
     this.t2index = this.tindex; // 保存父组件传过来的值
+    console.log(this.t2index)
     },
     initBlogs() {
-    const _this = this;
-    var baseurl = '/blog/getByPage?current=' + this.currentPage + '&size=' + this.pagesize + '&processed=1&published=1&share_statement=1&is_delete=0';
-    this.getRequest(baseurl).then(resp => {
-        if (resp) {
-        _this.blogsData = resp.data.records; // 将获取到的后端的值赋值给 blogsData
-        _this.total = resp.data.total; // 保存一下总记录数，用于前端展示
-        }
-    });
-    },
+        const _this = this;
+        var baseurl = '/blog/getByPage?current=' + this.currentPage + '&size=' + this.pagesize + '&processed=1&published=1&share_statement=1&is_delete=0';
+        // 通过条件拼接路由
+        baseurl += `&typeId=${this.t2index}`;
+        console.log(baseurl)
+        this.getRequest(baseurl).then(resp => {
+          if (resp) {
+            _this.blogsData = resp.data.records; // 将获取到的后端的值赋值给 blogsData
+            _this.total = resp.data.total; // 保存一下总记录数，用于前端展示
+          }
+        });
+      },
     handleCurrentChange(val) {
     console.log(`当前页: ${val}`);
     this.currentPage = val;

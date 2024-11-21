@@ -1,10 +1,12 @@
 package com.example.gameRecommend.mapper;
 
+import com.example.gameRecommend.entity.Links;
 import com.example.gameRecommend.entity.TCommentBlog;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.gameRecommend.entity.TFavorGame;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
 /**
  * <p>
  *  Mapper 接口
@@ -25,6 +27,10 @@ public interface TFavorGameMapper extends BaseMapper<TFavorGame> {
     // 检查用户是否已收藏
     @Select("SELECT COUNT(*) FROM t_favor_game WHERE userId = #{userId} AND gameId = #{gameId}")
     int countFavors(@Param("userId") Long userId, @Param("gameId") Long gameId);
+
+    // 检查用户的收藏
+    @Select("SELECT gameId FROM t_favor_game WHERE userId = #{userId}")
+    List<Integer> GetFavorsById(@Param("userId") Long userId);
 
     // 查询游戏的收藏数量
     @Select("SELECT COUNT(*) FROM t_favor_game WHERE gameId = #{gameId}")

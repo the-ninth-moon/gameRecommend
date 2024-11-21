@@ -10,6 +10,8 @@ import com.example.gameRecommend.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p>
  *  前端控制器
@@ -52,6 +54,14 @@ public class TFavorGameController {
         return result;
     }
 
+    @GetMapping("/getfavor")//添加
+    public Result isFavorGame(@RequestParam Long userId) {
+        Result result=Result.build();
+        result.setData(favorGameMapper.GetFavorsById(userId));
+        result.setCode(200);
+        return result;
+    }
+
     @GetMapping("/game/count")
     public Result getFavorCountByGameId(@RequestParam Long gameId) {
         int favorCount = favorGameService.getFavorCountByGameId(gameId);
@@ -60,4 +70,6 @@ public class TFavorGameController {
         result.setCode(200);
         return result;
     }
+
+
 }

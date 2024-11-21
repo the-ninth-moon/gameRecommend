@@ -7,11 +7,27 @@
         <el-input size="small" v-model="input_title" placeholder="请输入标题，可回车搜索..." prefix-icon="el-icon-search"
         style="width: 400px;margin-right: 10px;" @keydown.enter.native="search_title"></el-input>
         <el-button size="small" type="primary"  @click="search_title" icon="el-icon-search">搜索</el-button>
-        <el-button size="small" type="primary">高级搜索</el-button>
+                <!-- 排序按钮 -->
+        <!-- 排序按钮 -->
+        <el-button
+          size="small"
+          :type="sortType === 0 ? 'primary' : 'default'"
+          @click="sortGames(0)"
+        >
+          按时间排序
+        </el-button>
+        <el-button
+          size="small"
+          :type="sortType === 9 ? 'primary' : 'default'"
+          @click="sortGames(9)"
+        >
+          按热度排序
+        </el-button>
            <!-- 通用博客列表组件 -->
+           <pBlogsShowerListCom :tindex="tabindex" v-if="tabindex == 9 && hidden_searchcom == false"></pBlogsShowerListCom>
             <pBlogsShowerListCom :tindex="tabindex" v-if="tabindex == 0 && hidden_searchcom == false"></pBlogsShowerListCom>
             <!-- 搜索专用组件 -->
-            <BlogsShowerSearch v-if="tabindex == 0 && hidden_searchcom == true" :blogsData="blogsData"></BlogsShowerSearch>
+            <pBlogsShowerSearch v-if="tabindex == 0 && hidden_searchcom == true" :blogsData="blogsData"></pBlogsShowerSearch>
         </el-tab-pane>
       </el-tabs>
    
@@ -20,12 +36,12 @@
   
   <script>
   import pBlogsShowerListCom from '@/views/blogs/pBlogsShowerListCom.vue';
-  import BlogsShowerSearch from '@/views/blogs/BlogsShowerSearch.vue';
+  import pBlogsShowerSearch from '@/views/blogs/pBlogsShowerSearch.vue';
 
   export default {
     inject:['postKeyValueRequest','postRequest','putRequest','getRequest','deleteRequest'],
     name: 'pBlogsShower',
-    components:{pBlogsShowerListCom,BlogsShowerSearch},
+    components:{pBlogsShowerListCom,pBlogsShowerSearch},
     data () {
    return {
     activeName: 'zero',
@@ -43,6 +59,11 @@
     
   },
     methods:{
+    sortGames(type) {
+      this.sortType = type; // 更新排序类型
+      this.tabindex = ''+type;
+      console.log(this.tabindex)
+    },
     // 获取标签栏的index,就是原创，转载什么的
     handleClick(tab, event) {
         this.tabindex = tab.index

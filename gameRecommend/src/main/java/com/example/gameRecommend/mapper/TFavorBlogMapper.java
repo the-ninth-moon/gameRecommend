@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.example.gameRecommend.entity.TFavorBlog;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 /**
  * <p>
  *  Mapper 接口
@@ -29,4 +31,8 @@ public interface TFavorBlogMapper extends BaseMapper<TFavorBlog> {
     // 查询游戏的收藏数量
     @Select("SELECT COUNT(*) FROM t_favor_blog WHERE blogId = #{blogId}")
     int countFavorsByBlogId(@Param("blogId") Long blogId);
+
+    // 检查用户的收藏
+    @Select("SELECT blogId FROM t_favor_blog WHERE userId = #{userId}")
+    List<Integer> GetFavorsById(@Param("userId") Long userId);
 }

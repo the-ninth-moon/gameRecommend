@@ -72,6 +72,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
 //                .withUser("admin").password("123").roles("USER","ADMIN");
 //    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //System.out.println(3);

@@ -1,6 +1,11 @@
 <template>
   <div class="game-detail">
-    <h1>{{ game.name }}</h1>
+    <h1>
+  <a :href="game.officialWeb" target="_blank" style="text-decoration: none; color: inherit;">
+    {{ game.name }}
+  </a>
+</h1>
+
     <img class="first-image" :src="game.firstPicture" alt="First Image" />
 
     <div class="game-meta">
@@ -9,7 +14,7 @@
       <span class="developer">开发商: {{ game.developer }}</span>
       <span class="release-date">发售时间: {{ formatDate(game.sellTime) }}</span>
       <span class="platform">平台: {{ game.platform }}</span>
-      <a v-if="game.official_web" :href="game.official_web" target="_blank" class="official-link">官方网站</a>
+      <span><a v-if="game.officialWeb" :href="game.officialWeb" target="_blank" class="official-link" style="text-decoration: none; color: inherit">前去官网</a></span>
       <div class="tags">
         <span v-for="tag in game.tags" :key="tag.id" class="tag">{{ tag.name }}</span>
       </div>
@@ -277,7 +282,8 @@ h1 {
 .first-image {
   border-radius: 15px;
   margin-bottom: 1.5rem;
-  height:400px;
+  height:100%;
+  width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -289,17 +295,13 @@ h1 {
   justify-content: center;
 }
 
-.category, .score, .developer, .release-date, .platform {
+.category, .score, .developer, .release-date, .platform ,.official-link{
   font-weight: bold;
   background-color: rgba(0, 123, 255, 0.1);
   padding: 0.3rem 0.6rem;
   border-radius: 5px;
 }
 
-.official-link {
-  color: #007bff;
-  text-decoration: underline;
-}
 
 .tags {
   display: flex;

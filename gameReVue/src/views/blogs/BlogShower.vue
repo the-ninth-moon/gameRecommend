@@ -1,7 +1,7 @@
 <template>
   <div class="blog-detail">
     <h1>{{ blog.title }}</h1>
-    <img class="first-image" :src="blog.first_picture" alt="Blog Cover" />
+    <img class="first-image" :src="blog.firstPicture" alt="Blog Cover" />
 
     <div class="blog-meta">
       <span class="author">作者: {{ blog.author }}</span>

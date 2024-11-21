@@ -7,11 +7,27 @@
         <el-input size="small" v-model="input_title" placeholder="请输入标题，可回车搜索..." prefix-icon="el-icon-search"
         style="width: 400px;margin-right: 10px;" @keydown.enter.native="search_title"></el-input>
         <el-button size="small" type="primary"  @click="search_title" icon="el-icon-search">搜索</el-button>
-        <el-button size="small" type="primary">高级搜索</el-button>
-           <!-- 通用博客列表组件 -->
-            <BlogsShowerListCom :tindex="tabindex" v-if="tabindex == 0 && hidden_searchcom == false"></BlogsShowerListCom>
-            <!-- 搜索专用组件 -->
-            <BlogsShowerSearch v-if="tabindex == 0 && hidden_searchcom == true" :blogsData="blogsData"></BlogsShowerSearch>
+
+        <!-- 排序按钮 -->
+        <el-button
+          size="small"
+          :type="sortType === 0 ? 'primary' : 'default'"
+          @click="sortGames(0)"
+        >
+          按时间排序
+        </el-button>
+        <el-button
+          size="small"
+          :type="sortType === 9 ? 'primary' : 'default'"
+          @click="sortGames(9)"
+        >
+          按热度排序
+        </el-button>
+          <!-- 通用博客列表组件 -->
+          <BlogsShowerListCom :tindex="tabindex" v-if="tabindex == 9 && hidden_searchcom == false"></BlogsShowerListCom>
+          <BlogsShowerListCom :tindex="tabindex" v-if="tabindex == 0 && hidden_searchcom == false"></BlogsShowerListCom>
+          <!-- 搜索专用组件 -->
+          <BlogsShowerSearch v-if="tabindex == 0 && hidden_searchcom == true" :blogsData="blogsData"></BlogsShowerSearch>
         </el-tab-pane>
       </el-tabs>
    
@@ -47,6 +63,10 @@
     handleClick(tab, event) {
         this.tabindex = tab.index
         //console.log("tabindex = " + this.tabindex);
+    },
+    sortGames(type) {
+      this.sortType = type; // 更新排序类型
+      this.tabindex = ''+type;
     },
     //根据标题搜索
     search_title(){

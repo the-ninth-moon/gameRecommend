@@ -7,9 +7,18 @@
           </el-form-item>
           <el-form-item label="头像" prop="avatar">
             <el-input v-model="editForm.avatar"></el-input>
+            <el-upload
+              class="avatar-uploader"
+              action="/api/upload/avatar"  
+              :on-success="handleUploadSuccess"
+              :before-upload="beforeUpload"
+              accept="image/*"
+              :show-file-list="false">
+              <el-button size="small" type="primary">上传头像</el-button>
+            </el-upload>
           </el-form-item>
 
-          <el-form-item label="申请" prop="want">
+          <el-form-item label="申请" prop="want" v-if="this.role==3">
             <el-checkbox v-model="editForm.want">申请成为游戏推荐家</el-checkbox>
           </el-form-item>
 
@@ -30,7 +39,7 @@
       name: "Myself",
       data() {
         return {
-          editForm: {  //游戏文章表单
+          editForm: { 
             id: null,
             userName: '',
             avatar:'',
@@ -54,9 +63,26 @@
         this.editForm.id = this.user.id;
         this.editForm.userName = this.user.username;
         this.editForm.avatar = this.user.avatar;
-        //console.log(this.user)
+        this.role = this.user.role;
+        console.log(this.user.avatar)
       },
       methods: {
+        handleUploadSuccess(response, file, fileList) {
+            // 上传成功后的处理
+            if (response && response.data && response.data.url) {
+              this.editForm.avatar = response.data.url;  // 设置返回的 URL
+            } else {
+              this.$message.error('头像上传失败');
+            }
+          },
+          beforeUpload(file) {
+            // 可以在此检查文件类型、大小等
+            const isImage = file.type.startsWith('image/');
+            if (!isImage) {
+              this.$message.error('只能上传图片');
+            }
+            return isImage;
+          },
           submitUser(formName) {
             const _this = this
             console.log(this.editForm)

@@ -2,7 +2,7 @@
     <div>
         <header>
       <nav class="navbar">
-        <div class="logo">S T R E A M</div>
+        <div class="logo" style="font-size: 25px;">S T R E A M</div>
         <el-dropdown class="userInfo" @command="commandHandler">  <!--@command="commandHandler" 点击菜单项触发的事件回调-->
             <span class="el-dropdown-link"> <!--设置name和头像的-->
                 {{user.data.username}}
@@ -47,8 +47,9 @@
                 <div class="homeWelcome" v-if="$route.path === '/puser/home'">
                     <h1>游戏推荐系统</h1>
                 </div>
-                <RouterView></RouterView>
+               
             </el-main>
+            <RouterView></RouterView>
         </el-container>
     </div>
           <!-- 底部固定导航栏 -->
@@ -130,47 +131,47 @@ import eventBus from '@/eventBus';
 </script>
  
 <style>
-    .homeHeader{
-        background-color:#409eff;
-        display: flex;
-        align-items: center; /*竖轴上居中*/
-        justify-content:space-between; /*空白的地方在中间*/
-        padding: 0 15px;
-        box-sizing: border-box;
-    }
-    /* 字体样式 */
-    .title{
-        font-size: 30px;
-        font-family: 黑体;
-        color: #ffffff;
-    }
-    /*设置鼠标移上去显示为手指*/
-    .userInfo{
-        cursor: pointer; 
-    }
-    /* 头像样式 */
-    .el-dropdown-link img{
-        width: 48px;
-        height: 48px;
-        border-radius: 24px;
-        margin-left: 8px;
-    }
-    /* 用户名样式 */
-    .el-dropdown-link{
-        display: flex;
-        align-items: center;
-    }
-    /* 面包屑样式 */
-    .homeWelcome{
-        text-align: center;
-        font-size: 30px;
-        font-family: 华文行楷;
-        color: #409eff;
-        padding-top: 50px;
-    }
-    a{
-        text-decoration:none;
-    }
+.homeHeader{
+    background-color:#409eff;
+    display: flex;
+    align-items: center; /*竖轴上居中*/
+    justify-content:space-between; /*空白的地方在中间*/
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+/* 字体样式 */
+.title{
+    font-size: 30px;
+    font-family: 黑体;
+    color: #ffffff;
+}
+/*设置鼠标移上去显示为手指*/
+.userInfo{
+    cursor: pointer; 
+}
+/* 头像样式 */
+.el-dropdown-link img{
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    margin-left: 8px;
+}
+/* 用户名样式 */
+.el-dropdown-link{
+    display: flex;
+    align-items: center;
+}
+/* 面包屑样式 */
+.homeWelcome{
+    text-align: center;
+    font-size: 30px;
+    font-family: 华文行楷;
+    color: #409eff;
+    padding-top: 50px;
+}
+a{
+    text-decoration:none;
+}
 
 
 </style>

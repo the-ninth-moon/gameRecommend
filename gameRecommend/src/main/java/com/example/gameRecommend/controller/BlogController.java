@@ -22,6 +22,8 @@ import java.util.HashMap;
  * @author 
  * @since 2023-07-28
  */
+
+//127.0.0.1:8000/blog/getByPage?current
 @RestController
 @RequestMapping("/blog")
 public class BlogController {
@@ -51,10 +53,11 @@ public class BlogController {
             @ApiImplicitParam(name = "original",value = "原创或转载"),
             @ApiImplicitParam(name = "share_statement",value = "草稿"),
             @ApiImplicitParam(name = "is_delete",value = "是否已删除"),
+            @ApiImplicitParam(name = "typeId",value = "这里用来进行排序"),
     })
     public Result getByPage(Long current, Long size, Boolean published,Boolean processed,
-                            String original, Boolean share_statement, Boolean is_delete){
-        return tBlogService.pageBlogs(current, size,published,processed,original,share_statement,is_delete);
+                            String original, Boolean share_statement, Boolean is_delete,Long typeId){
+        return tBlogService.pageBlogs(current, size,published,processed,original,share_statement,is_delete, typeId);
     }
     //给swagger2加注解的
     @GetMapping("/writerGetByPage")

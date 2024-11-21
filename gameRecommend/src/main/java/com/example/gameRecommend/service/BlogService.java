@@ -17,7 +17,7 @@ import java.util.HashMap;
  */
 public interface BlogService extends IService<Blog> {
     //分页查询
-    Result pageBlogs(Long current, Long limit, Boolean published,  Boolean porcessed,String flag, Boolean share_statement, Boolean is_delete);
+    Result pageBlogs(Long current, Long limit, Boolean published,  Boolean porcessed,String flag, Boolean share_statement, Boolean is_delete,Long typeId);
     Result writerPageBlogs(String id,Long current, Long limit, Boolean published,  Boolean porcessed,String flag, Boolean share_statement, Boolean is_delete);
     Result getByTitle(String title);
 

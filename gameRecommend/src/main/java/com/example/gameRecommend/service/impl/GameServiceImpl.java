@@ -63,13 +63,16 @@ public class GameServiceImpl extends ServiceImpl<GameMapper, Game> implements Ga
             //构建条件
             wrapper.eq("is_delete",is_delete);
         }
-        if (typeId != null){
+        if (typeId != null && typeId != 9){
             //构建条件
-            wrapper.eq("typeId",typeId);
+            wrapper.eq("typeId",typeId);//9 作为一个特殊分类表示按热度排序
         }
-
-        //以更新时间排序（降序）
-        wrapper.orderByDesc("update_time");
+        if(typeId != null && typeId == 9){
+            wrapper.orderByDesc("views");
+        }
+        else{
+            wrapper.orderByDesc("sell_time");
+        }
 
         //调用mybatis plus分页方法进行查询
         tGameMapper.selectPage(tGamePage,wrapper);

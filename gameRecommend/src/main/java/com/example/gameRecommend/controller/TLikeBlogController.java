@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
  * @author 
  * @since 2024-09-30
  */
+//127.0.0.1:8000/likes-blog/isLike?userId=1&blogId=2
 @RestController
 @RequestMapping("/likes-blog")
 public class TLikeBlogController {

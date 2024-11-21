@@ -25,7 +25,7 @@
       </div>
 
       <!-- 分页 -->
-      <div v-if="!hidden_page" style="margin-top: 20px;">
+      <!-- <div v-if="!hidden_page" style="margin-top: 20px;">
           <el-pagination
               background
               @size-change="handleSizeChange"
@@ -36,7 +36,7 @@
               layout="total, sizes, prev, pager, next, jumper"
               :total="total">
           </el-pagination>
-      </div>
+      </div> -->
   </div>
  </template>
  

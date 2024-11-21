@@ -35,6 +35,10 @@ import pGamesShower from '@/views/games/pGamesShower.vue'
 import pBlogsShower from '@/views/blogs/pBlogsShower.vue'
 import pBlogShower from '@/views/blogs/pBlogShower.vue'
 import pUserHome from '@/components/pUserHome.vue'
+import MyfavorGame from '@/views/users/MyfavorGame.vue'
+import MyfavorBlog from '@/views/users/MyfavorBlog.vue'
+import pMyfavorBlog from '@/views/users/pMyfavorBlog.vue'
+import pMyfavorGame from '@/views/users/pMyfavorGame.vue'
 
 const routes = [
 
@@ -139,8 +143,10 @@ const routes = [
     component: WriterHome,
     hidden:false,
     children:[
-      { path: '/writer/me', name: '修改信息',  component: Myself  },
-      { path: '/writer/changePwd', name: '修改密码',  component: ChangePwd  },
+      { path: '/writer/me', name: '修改信息 ',  component: Myself  },
+      { path: '/writer/changePwd', name: '修改密码 ',  component: ChangePwd  },
+      { path: '/writer/favorGame', name: '收藏游戏 ',  component: MyfavorGame  },
+      { path: '/writer/favorBlog', name: '收藏博文 ',  component: MyfavorBlog  },
     ]
   },
   {
@@ -157,12 +163,14 @@ const routes = [
 
   {
     path: '/user/home',
-    name: '我的信息 ',
+    name: '用户信息 ',
     component: UserHome,
     hidden:false,
     children:[
-      { path: '/user/me', name: '修改信息 ',  component: Myself  },
-      { path: '/user/changePwd', name: '修改密码 ',  component: ChangePwd  },
+      { path: '/user/me', name: '修改信息  ',  component: Myself  },
+      { path: '/user/changePwd', name: '修改密码  ',  component: ChangePwd  },
+      { path: '/user/favorGame', name: '收藏游戏  ',  component: MyfavorGame  },
+      { path: '/user/favorBlog', name: '收藏博文  ',  component: MyfavorBlog  },
     ]
   },
   {
@@ -171,8 +179,10 @@ const routes = [
     component: pUserHome,
     hidden:false,
     children:[
-      { path: '/puser/me', name: '修改信息 ',  component: Myself  },
-      { path: '/puser/changePwd', name: '修改密码 ',  component: ChangePwd  },
+      { path: '/puser/me', name: '修改信息',  component: Myself  },
+      { path: '/puser/changePwd', name: '修改密码',  component: ChangePwd  },
+      { path: '/puser/favorGame', name: '收藏游戏',  component: pMyfavorGame  },
+      { path: '/pser/favorBlog', name: '收藏博文',  component: pMyfavorBlog  },
     ]
   },
 

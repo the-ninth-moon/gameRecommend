@@ -6,10 +6,30 @@
         <el-input size="small" v-model="input_title" placeholder="请输入标题，可回车搜索..." prefix-icon="el-icon-search"
             @keydown.enter.native="search_title"></el-input>
         <el-button size="small" type="primary" @click="search_title" icon="el-icon-search">搜索</el-button>
+                <!-- 排序按钮 -->
+                <el-button
+          size="small"
+          :type="sortType === 0 ? 'primary' : 'default'"
+          @click="sortGames(0)"
+        >
+          按时间排序
+        </el-button>
+        <el-button
+          size="small"
+          :type="sortType === 9 ? 'primary' : 'default'"
+          @click="sortGames(9)"
+        >
+          按热度排序
+        </el-button>
         <!-- 用户前台游戏列表组件 -->
         <pGamesShowerListCom :tindex="tabindex" v-if="tabindex == 0 && hidden_searchcom == false"></pGamesShowerListCom>
+        <!-- 用户前台游戏列表组件 -->
+        <pGamesShowerListCom
+          :tindex="tabindex"
+          v-if="tabindex == 9 && hidden_searchcom == false"
+        ></pGamesShowerListCom>
         <!-- 搜索专用组件 -->
-        <GamesShowerSearch v-if="tabindex == 0 && hidden_searchcom == true" :gamesData="gamesData"></GamesShowerSearch>
+        <pGamesShowerSearch v-if="tabindex == 0 && hidden_searchcom == true" :gamesData="gamesData"></pGamesShowerSearch>
     </el-tab-pane>
 
     <el-tab-pane label="角色扮演" name="first">
@@ -42,14 +62,14 @@
 
 <script>
 import pGamesShowerListCom from './pGamesShowerListCom.vue';
-import GamesShowerSearch from '@/views/games/GamesShowerSearch.vue';
+import pGamesShowerSearch from './pGamesShowerSearch.vue';
 
 export default {
 inject:['postKeyValueRequest','postRequest','putRequest','getRequest','deleteRequest'],
 name: 'pGamesShower',
 components: {
     pGamesShowerListCom,
-    GamesShowerSearch
+    pGamesShowerSearch
 },
 data() {
     return {
@@ -64,6 +84,10 @@ methods: {
     handleClick(tab, event) {
     this.tabindex = tab.index;
     // console.log("tabindex = " + this.tabindex);
+    },
+    sortGames(type) {
+      this.sortType = type; // 更新排序类型
+      this.tabindex = ''+type;
     },
     search_title() {
     if (this.input_title === '') {

@@ -72,13 +72,15 @@ export default {
           if(this.t2index !== "0"){ // 全部以外的情况
               baseurl += `&typeId=${this.t2index}`;
           }
-          console.log(baseurl);
+          console.log(baseurl)
           this.getRequest(baseurl).then(resp => {
               if(resp){
                   _this.gamesData = resp.data.records; // 将获取到的后端的值赋值给gamesData
                   _this.total = resp.data.total;       // 保存一下总记录数，用于前端展示
+                  console.log(_this.gamesData)
               }
           });
+
       },
       handleCurrentChange(val) {
           this.currentPage = val;

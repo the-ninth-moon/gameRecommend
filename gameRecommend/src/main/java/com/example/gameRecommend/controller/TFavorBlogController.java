@@ -36,7 +36,13 @@ public class TFavorBlogController {
         result.setCode(200);
         return result;
     }
-
+    @GetMapping("/getfavor")//添加
+    public Result isFavorBlog(@RequestParam Long userId) {
+        Result result=Result.build();
+        result.setData(favorBlogMapper.GetFavorsById(userId));
+        result.setCode(200);
+        return result;
+    }
     @GetMapping("/isfavor")//添加
     public Result isFavorBlog(@RequestParam Long userId, @RequestParam Long blogId) {
         int favord = favorBlogMapper.countFavors(userId, blogId);

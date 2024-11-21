@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>单机资源下载_一键下载安装游戏资源,辅助工具_3DM下载</title>
+    <meta name="Keywords" content="单机游戏,独立游戏,游戏补丁,ps4,switch,xbox,模拟器游戏"/>
+    <meta name="Description" content="3DM资源下载频道有着最新的游戏资源、辅助工具等，提供了高速下载渠道，简单的安装方式，便捷的反馈渠道，玩家可以自由下载、分享、讨论所有的资源。"/>
+    <meta name="360-site-verification" content="ab7192c83a6a40a192636981c98b5673" />
+    <link rel="stylesheet" href="https://dl.3dmgame.com/newpage/css/base_Rev.css?v=202309">
+    <link rel="stylesheet" type="text/css" href="https://dl.3dmgame.com/page/css/dj_common.css"/>
+    <link rel="stylesheet" type="text/css" href="https://dl.3dmgame.com/page/css/downl.css"/>
+    <script src="https://dl.3dmgame.com/page/js/jq1.9.js"></script>
+    <script src="https://dup.baidustatic.com/js/ds.js"></script>
+    <div style="display: none;">
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "https://hm.baidu.com/hm.js?9b05a227dcddd153a6152ef4bfb072be";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+</div>
+</head>
+<body>
+    <div class="header_wrap">
+        <div class="header_center">
+            <div class="center">
+                <div class="hedtop">
+                    <ul class="ullink">
+                        <li><a href="https://www.3dmgame.com" target="_blank">主站</a></li>
+                        <li><a href="https://shop.3dmgame.com" target="_blank">商城</a></li>
+                        <li><a href="https://bbs.3dmgame.com" target="_blank">论坛</a></li>
+                        <li><a href="https://yx.3dmgame.com" target="_blank">自运营</a></li>
+                    </ul>
+                    <div class="head_top_rt" id="my_user_top">
+                        <i class="iconame"></i>
+                        <a href="javascript:void(0);" class="login a" onclick="openlogin()">登录</a>
+                        <a href="javascript:void(0);" class="enroll a" onclick="openregister()">注册</a>
+                    </div>
+                </div>
+                <div class="header">
+                    <a href="https://www.3dmgame.com" class="logo"><img src="https://www.3dmgame.com/newpage/images/logo.png" alt=""></a>
+                    <a href="https://www.3dmgame.com/app.html" target="_blank" class="addapp">
+                        <div class="imgsao"><img src="https://www.3dmgame.com/newpage/img/sao.png" alt=""></div>
+                    </a>
+                    <div class="search">
+                        <div class="bj"></div>
+                        <form action="https://so.3dmgame.com/" method="get" target="_blank" autocomplete="off"
+                            id="bdcs">
+                            <input type="text" onblur="if (this.value=='') this.value='三国群英传'" value="三国群英传"
+                                this.style.color="#000000" onfocus="if (this.value!='') this.value=''" name="keyword">
+                            <input type="hidden" name="subsearch" value="1" />
+                            <input type="hidden" name="type" value="5" />
+                            <button type="submit" class="but"><i></i></button>
+                        </form>
+                    </div>
+                    <div class="navbox">
+                        <ul class="nav">
+                            <li><u></u><a href="https://www.3dmgame.com"><i class="ico1"></i><span>首页</span></a></li>
+                            <li class="on"><u></u><a href="https://www.3dmgame.com/games/"><u></u><i class="ico2"></i><span>单机</span></a></li>
+                            <li><u></u><a href="https://shouyou.3dmgame.com/"><i class="ico3"></i><span>手游</span></a></li>
+                            <li><u></u><a href="https://soft.3dmgame.com/"><i class="ico4"></i><span>软件</span></a></li>
+                            <li><u></u><a href="https://ol.3dmgame.com/"><i class="ico5"></i><span>网游</span></a></li>
+                            <li><u></u><a href="https://yx.3dmgame.com/"><i class="ico6"></i><span>自运营</span></a></li>
+                        </ul>
+                        <div class="addbox">
+    <script>
+	(function() {
+	    var s = "_" + Math.random().toString(36).slice(2);
+	    document.write('<div id="' + s + '"></div>');
+	    (window.slotbydup=window.slotbydup || []).push({
+	        id: '7678588',
+	        container: s,
+	        size: '94,54',
+	        display: 'inlay-fix'
+	    });
+	})();
+	</script>
+</div>                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_nav">
+            <div class="bj" style="opacity: 1; border-color: #353535;"></div>
+            <div class="center">
+                <div class="ul_nav">
+                    <ul>
+                        <li class="{ongames}"><a href="https://www.3dmgame.com/games/zq/">专区</a></li>
+                        <li class="on"><a href="https://dl.3dmgame.com">下载</a></li>
+                        <li class="{ongl}"><a href="https://www.3dmgame.com/gl/">攻略</a></li>
+                        <li class="{onpatch}"><a href="https://dl.3dmgame.com/patch/">补丁</a></li>
+                        <li class="{onhanhua}"><a href="https://www.3dmgame.com/hanhua/">汉化</a></li>
+                        <li class="{onns}"><a href="https://www.3dmgame.com/switch/">ns<span></span></a></li>
+                        <li class="{onps}"><a href="https://www.3dmgame.com/ps/">ps<span></span></a></li>
+                        <li class="{onxbox}"><a href="https://www.3dmgame.com/xbox/">xbox<span></span></a></li>
+                        <li class="{onsale}"><a href="https://www.3dmgame.com/release/">发售表<span></span></a></li>
+                        <li class="{onphb}"><a href="https://www.3dmgame.com/phb.html">排行榜<span></span></a></li>
+                    </ul>
+                    <div class="cur"></div>
+                    <div class="switch_theme">
+                        <div class="labico"><i></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '7678667',
+        container: s,
+        size: '1000,90',
+        display: 'inlay-fix'
+    });
+})();
+</script>    </div>
+    <script src="https://dl.3dmgame.com/newpage/js/newbase.js"></script><style>.Tonglan{width: 1200px;overflow: hidden; margin: 15px auto -10px;position: relative;}.Tonglan>div{margin: 0 auto;}</style>
+<div class="Tonglan">
+    <script>
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '5868478',
+                container: s,
+                size: '1200,90',
+                display: 'inlay-fix'
+            });
+        })();
+    </script>
+    <i style="width:26px;height:15px;position:absolute;left:0;bottom:0;background:url(https://www.3dmgame.com/page/images/icon_ad.png);"></i>
+</div>    <div class="content" >
+        <div class="crumb">
+            <i></i>您的位置：
+            <a href="https://www.3dmgame.com/games/" target="_blank">单机</a> >
+            <a>游戏</a>
+        </div>
+                <div class="dj_newplates1">
+            <div class="bd">
+                <ul>
+                                            <li>
+                            <a href="https://soft.3dmgame.com/down/159478.html" target="_blank" class="img">
+                                <img data-original="https://img.3dmgame.com/uploads/images/thumbnews/20230419/1681898231_638091.png">
+                                <p class="name"><span>风灵月影修改器大全</span></p>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://dl.3dmgame.com/pc/137819.html" target="_blank" class="img">
+                                <img data-original="https://img.3dmgame.com/uploads/images/thumbnews/20230215/1676447965_525357.jpg">
+                                <p class="name"><span>歧路旅人 II</span></p>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://dl.3dmgame.com/pc/137938.html" target="_blank" class="img">
+                                <img data-original="https://img.3dmgame.com/uploads/images/thumbnews/20230215/1676448065_173725.jpg">
+                                <p class="name"><span>瘟疫传说：安魂曲</span></p>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://yx.3dmgame.com/yy/yscq/ad" target="_blank" class="img">
+                                <img data-original="https://img.3dmgame.com/uploads/images/thumbnews/20221213/1670911734_338970.gif">
+                                <p class="name"><span>原始传奇</span></p>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://dl.3dmgame.com/pc/137161.html" target="_blank" class="img">
+                                <img data-original="https://img.3dmgame.com/uploads/images/thumbnews/20230215/1676448201_766277.jpg">
+                                <p class="name"><span>黑相集：心中魔</span></p>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://dl.3dmgame.com/pc/135917.html" target="_blank" class="img">
+                                <img data-original="https://img.3dmgame.com/uploads/images/thumbnews/20230215/1676448293_719861.png">
+                                <p class="name"><span>怪物猎人：崛起</span></p>
+                            </a>
+                        </li>
+                                            <li>
+                            <a href="https://dl.3dmgame.com/pc/132101.html" target="_blank" class="img">
+                                <img data-original="https://img.3dmgame.com/uploads/images/thumbnews/20201102/1604303386_215055.jpg">
+                                <p class="name"><span>三国杀：十周年</span></p>
+                            </a>
+                        </li>
+                                    </ul>
+            </div>
+        </div>
+                <div class="Gmlistab">
+            <div class="Tabtop">
+                <a><p class="on">游戏下载</p></a>
+            </div>
+            <ul class="list"  style="display: block;">
+                <li class="on"><a>全部游戏</a></li>
+                <li><a href="https://dl.3dmgame.com/all_2_1_time/">角色扮演</a></li>
+                <li><a href="https://dl.3dmgame.com/all_3_1_time/">射击游戏</a></li>
+                <li><a href="https://dl.3dmgame.com/all_4_1_time/">动作游戏</a></li>
+                <li><a href="https://dl.3dmgame.com/all_5_1_time/">冒险游戏</a></li>
+                <li><a href="https://dl.3dmgame.com/all_6_1_time/">赛车游戏</a></li>
+                <li><a href="https://dl.3dmgame.com/all_7_1_time/">策略游戏</a></li>
+                <li><a href="https://dl.3dmgame.com/all_8_1_time/">即时战略</a></li>
+                <li><a href="https://dl.3dmgame.com/all_9_1_time/">养成游戏</a></li>
+                <li><a href="https://dl.3dmgame.com/all_10_1_time/">桌面棋牌</a></li>
+                <li><a href="https://dl.3dmgame.com/all_11_1_time/">休闲益智</a></li>
+                <li><a href="https://dl.3dmgame.com/all_12_1_time/">体育运动</a></li>
+                <li><a href="https://dl.3dmgame.com/all_13_1_time/">模拟经营</a></li>
+                <li><a href="https://dl.3dmgame.com/all_14_1_time/">音乐游戏</a></li>
+                <li><a href="https://dl.3dmgame.com/all_15_1_time/">格斗游戏</a></li>
+                <li><a href="https://dl.3dmgame.com/all_16_1_time/">动作角色</a></li>
+                <li><a href="https://dl.3dmgame.com/all_17_1_time/">第一人称射击</a></li>
+                <li><a href="https://dl.3dmgame.com/all_18_1_time/">第三人称射击</a></li>
+                <li><a href="https://dl.3dmgame.com/all_56_1_time/">其他游戏</a></li>
+                <li><a href="https://dl.3dmgame.com/all_57_1_time/">模拟器类</a></li>
+                <li><a href="https://dl.3dmgame.com/all_58_1_time/">网络游戏</a></li>
+            </ul>
+        </div>
+        <div class="Litstop">
+            <div class="num">共计：<span>47078</span>  款 </div>
+            <div class="px">
+                <span>排序方式：</span>
+                                <a href="https://dl.3dmgame.com/all_all_1_-time/" class="on">时间</a>
+                                                <a href="https://dl.3dmgame.com/all_all_1_hot/">热度</a>
+                                                <a href="https://dl.3dmgame.com/all_all_1_score/">评分</a>
+                            </div>
+            <div class="tab_a">
+                                <a href="https://dl.3dmgame.com/all_all_1_time_cn/">中文版</a>
+                                                <a href="https://dl.3dmgame.com/all_all_1_time_free/">免安装</a>
+                            </div>
+        </div>
+        <div class="listwrap">
+            <ul class="downllis">
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="http://web.3dmgame.com/yy/qldyx/ad" target="_blank"><img data-original="https://yx.3dmgame.com/uploads/images/thumbnews/20230217/1676601103_959478.png"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="http://web.3dmgame.com/yy/qldyx/ad" target="_blank">3DM自营《权力的游戏》</a></div>
+                            <ol>
+                                <li>类型：<i>战争策略</i></li>
+                                <li class="li1"><span></span><i>34778</i></li>
+                                <li>语言：<i>中文</i></li>
+                                <li>评分：<i>9.6</i></li>
+                                <li>发布：<i>2023-02-17</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                                                            <a href="javascript:void(0)">国战</a>
+                                                                    </li>
+                            </ol>
+                        </div>
+                        <a href="" target="_blank" class="a_click">
+                                <i></i>微端下载 (17.8 M)
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://yx.3dmgame.com/yy/yscq/ad" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbnews/20221222/1671690933_870744.gif"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://yx.3dmgame.com/yy/yscq/ad" target="_blank">3DM自营《原始传奇》 限时回收</a></div>
+                            <ol>
+                                <li>类型：<i>角色扮演</i></li>
+                                <li class="li1"><span></span><i>269934</i></li>
+                                <li>语言：<i>中文</i></li>
+                                <li>评分：<i>9.9</i></li>
+                                <li>发布：<i>2021-08-12</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                                                            <a href="javascript:void(0)">传奇</a>
+                                                                            <a href="javascript:void(0)">魔幻</a>
+                                                                    </li>
+                            </ol>
+                        </div>
+                        <a href="https://tjj.shwswl.cn/3dm_yscq.exe" target="_blank" class="a_click">
+                                <i></i>微端下载 (41.83M)
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138854.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230905/1693881650_549385.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138854.html" target="_blank">《乔雷尔兄弟哥与银河系最重要的游戏》英文免安装版</a></div>
+                            <ol>
+                                <li>类型：<i>冒险游戏</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>英文</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-09-05</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/jiemi_1/" target="_blank">解谜</a>
+                                    <a href="https://www.3dmgame.com/tag/duli_1/" target="_blank">独立</a>
+                                    <a href="https://www.3dmgame.com/tag/xuanyi_1/" target="_blank">悬疑</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138854.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (1.07GB)
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138853.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230904/1693812244_721024.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138853.html" target="_blank">《索尼克 超级巨星》游戏库</a></div>
+                            <ol>
+                                <li>类型：<i>动作游戏</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-09-04</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138853.html" target="_blank" class="a_click">
+                                                            暂无资源
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138852.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230831/1693462232_847170.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138852.html" target="_blank">《战锤西格玛时代：毁灭之境》游戏库</a></div>
+                            <ol>
+                                <li>类型：<i>策略游戏</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-09-04</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/zhanzheng_1/" target="_blank">战争</a>
+                                    <a href="https://www.3dmgame.com/tag/qihuan_1/" target="_blank">奇幻</a>
+                                    <a href="https://www.3dmgame.com/tag/juqing_1/" target="_blank">剧情</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138852.html" target="_blank" class="a_click">
+                                                            暂无资源
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138851.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230425/1682400955_156646.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138851.html" target="_blank">《重生边缘》Steam正版分流</a></div>
+                            <ol>
+                                <li>类型：<i>射击游戏</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-09-02</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/zhanzheng_1/" target="_blank">战争</a>
+                                    <a href="https://www.3dmgame.com/tag/sangshi_1/" target="_blank">丧尸</a>
+                                    <a href="https://www.3dmgame.com/tag/duikang_1/" target="_blank">对抗</a>
+                                    <a href="https://www.3dmgame.com/tag/gc_1/" target="_blank">国产</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138851.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (40.08GB)
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138850.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230831/1693447796_108581.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138850.html" target="_blank">《热带之心》英文免安装版</a></div>
+                            <ol>
+                                <li>类型：<i>角色扮演</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>英文</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-31</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/duli_1/" target="_blank">独立</a>
+                                    <a href="https://www.3dmgame.com/tag/xuanyi_1/" target="_blank">悬疑</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138850.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (1.17GB)
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138558.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230325/1679709974_386280.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138558.html" target="_blank">《崩坏：星穹铁道》1.3版本下载</a></div>
+                            <ol>
+                                <li>类型：<i>角色扮演</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-30</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/katong_1/" target="_blank">卡通</a>
+                                    <a href="https://www.3dmgame.com/tag/meishaonv_1/" target="_blank">美少女</a>
+                                    <a href="https://www.3dmgame.com/tag/gc_1/" target="_blank">国产</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138558.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (18.30GB)
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138849.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230830/1693377971_705380.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138849.html" target="_blank">《末日地带2》游戏库</a></div>
+                            <ol>
+                                <li>类型：<i>模拟经营</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-30</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/shahe_1/" target="_blank">沙盒</a>
+                                    <a href="https://www.3dmgame.com/tag/moshi_1/" target="_blank">末世</a>
+                                    <a href="https://www.3dmgame.com/tag/jianzao_1/" target="_blank">建造</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138849.html" target="_blank" class="a_click">
+                                                            暂无资源
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138848.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230830/1693359901_404071.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138848.html" target="_blank">《忧郁星期三》中文免安装版</a></div>
+                            <ol>
+                                <li>类型：<i>冒险游戏</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-30</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/katong_1/" target="_blank">卡通</a>
+                                    <a href="https://www.3dmgame.com/tag/duli_1/" target="_blank">独立</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138848.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (806.93MB)
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138847.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20200320/1584671712_602940.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138847.html" target="_blank">《星之海》Steam正版分流</a></div>
+                            <ol>
+                                <li>类型：<i>角色扮演</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>7.0</i></li>
+                                <li>发布：<i>2023-08-29</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/qihuan_1/" target="_blank">奇幻</a>
+                                    <a href="https://www.3dmgame.com/tag/huihezhi_1/" target="_blank">回合制</a>
+                                    <a href="https://www.3dmgame.com/tag/xiangsu_1/" target="_blank">像素</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138847.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (478.02MB)
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138846.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230829/1693299779_323283.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138846.html" target="_blank">《蜜蜂岛》中文免安装版</a></div>
+                            <ol>
+                                <li>类型：<i>策略游戏</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-29</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/shahe_1/" target="_blank">沙盒</a>
+                                    <a href="https://www.3dmgame.com/tag/shengcun_1/" target="_blank">生存</a>
+                                    <a href="https://www.3dmgame.com/tag/zhongshiji_1/" target="_blank">中世纪</a>
+                                    <a href="https://www.3dmgame.com/tag/duli_1/" target="_blank">独立</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138846.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (532.17MB)
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138845.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230829/1693273612_347420.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138845.html" target="_blank">《地痞街区2》游戏库</a></div>
+                            <ol>
+                                <li>类型：<i>角色扮演</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-29</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/shahe_1/" target="_blank">沙盒</a>
+                                    <a href="https://www.3dmgame.com/tag/roguelike_1/" target="_blank">Roguelike</a>
+                                    <a href="https://www.3dmgame.com/tag/kaifangshijie_1/" target="_blank">开放世界</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138845.html" target="_blank" class="a_click">
+                                                            暂无资源
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138844.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20210511/1620698686_597868.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138844.html" target="_blank">《银河文明4》 中文免安装版</a></div>
+                            <ol>
+                                <li>类型：<i>即时战略</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>3DM汉化</i></li>
+                                <li>评分：<i>7.1</i></li>
+                                <li>发布：<i>2023-08-28</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/kehuan_1/" target="_blank">科幻</a>
+                                    <a href="https://www.3dmgame.com/tag/juqing_1/" target="_blank">剧情</a>
+                                    <a href="https://www.3dmgame.com/tag/jianzao_1/" target="_blank">建造</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138844.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (15.90GB)
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138843.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230825/1692928994_360588.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138843.html" target="_blank">《大功告成！》中文免安装版</a></div>
+                            <ol>
+                                <li>类型：<i>冒险游戏</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-25</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/katong_1/" target="_blank">卡通</a>
+                                    <a href="https://www.3dmgame.com/tag/jiemi_1/" target="_blank">解谜</a>
+                                    <a href="https://www.3dmgame.com/tag/duli_1/" target="_blank">独立</a>
+                                    <a href="https://www.3dmgame.com/tag/fugu_1/" target="_blank">复古</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138843.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (669.46MB)
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138842.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230824/1692864056_904265.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138842.html" target="_blank">《夜莺传说》游戏库</a></div>
+                            <ol>
+                                <li>类型：<i>角色扮演</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>英文</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-24</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/mohuan_1/" target="_blank">魔幻</a>
+                                    <a href="https://www.3dmgame.com/tag/qihuan_1/" target="_blank">奇幻</a>
+                                    <a href="https://www.3dmgame.com/tag/shengcun_1/" target="_blank">生存</a>
+                                    <a href="https://www.3dmgame.com/tag/jianzao_1/" target="_blank">建造</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138842.html" target="_blank" class="a_click">
+                                                            暂无资源
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138841.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230824/1692857813_163140.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138841.html" target="_blank">《Soulslinger: Envoy of Death》中文试玩demo版</a></div>
+                            <ol>
+                                <li>类型：<i>动作游戏</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-24</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/qihuan_1/" target="_blank">奇幻</a>
+                                    <a href="https://www.3dmgame.com/tag/duli_1/" target="_blank">独立</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138841.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (11.27GB)
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/134207.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230823/1692776347_458409.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/134207.html" target="_blank">《荒野战纪》游戏库</a></div>
+                            <ol>
+                                <li>类型：<i>角色扮演</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-23</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/qihuan_1/" target="_blank">奇幻</a>
+                                    <a href="https://www.3dmgame.com/tag/huihezhi_1/" target="_blank">回合制</a>
+                                    <a href="https://www.3dmgame.com/tag/roguelike_1/" target="_blank">Roguelike</a>
+                                    <a href="https://www.3dmgame.com/tag/juqing_1/" target="_blank">剧情</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/134207.html" target="_blank" class="a_click">
+                                                            暂无资源
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138840.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230823/1692771144_620761.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138840.html" target="_blank">《小小梦魇3》游戏库</a></div>
+                            <ol>
+                                <li>类型：<i>冒险游戏</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>3.3</i></li>
+                                <li>发布：<i>2023-08-23</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/kongbu_1/" target="_blank">恐怖</a>
+                                    <a href="https://www.3dmgame.com/tag/jiemi_1/" target="_blank">解谜</a>
+                                    <a href="https://www.3dmgame.com/tag/hezuo_1/" target="_blank">合作</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138840.html" target="_blank" class="a_click">
+                                                            暂无资源
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138143.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230822/1692688927_129601.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138143.html" target="_blank">《虚妄轮回》游戏库</a></div>
+                            <ol>
+                                <li>类型：<i>策略游戏</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-22</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/katong_1/" target="_blank">卡通</a>
+                                    <a href="https://www.3dmgame.com/tag/huihezhi_1/" target="_blank">回合制</a>
+                                    <a href="https://www.3dmgame.com/tag/jiemi_1/" target="_blank">解谜</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138143.html" target="_blank" class="a_click">
+                                                            暂无资源
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138839.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20230821/1692603540_165526.jpg"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138839.html" target="_blank">《箭箭剑》steam正版分流</a></div>
+                            <ol>
+                                <li>类型：<i>休闲益智</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-21</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/katong_1/" target="_blank">卡通</a>
+                                    <a href="https://www.3dmgame.com/tag/qihuan_1/" target="_blank">奇幻</a>
+                                    <a href="https://www.3dmgame.com/tag/danmu_1/" target="_blank">弹幕</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138839.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (92.91MB)
+                                                    </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <div class="img"><a href="https://dl.3dmgame.com/pc/138838.html" target="_blank"><img data-original="https://img.3dmgame.com/uploads/images/thumbkwdfirst/20201021/1603262004_756914.png"></a></div>
+                        <div class="text">
+                            <div class="bt"><a href="https://dl.3dmgame.com/pc/138838.html" target="_blank">《你好工程师》简体中文免安装版</a></div>
+                            <ol>
+                                <li>类型：<i>角色扮演</i></li>
+                                <li class="li1"><span></span><i>1</i></li>
+                                <li>语言：<i>简中</i></li>
+                                <li>评分：<i>0.0</i></li>
+                                <li>发布：<i>2023-08-18</i></li>
+                                <li>平台：<i>pc</i></li>
+                                <li class="li2">标签：
+                                    <a href="https://www.3dmgame.com/tag/shahe_1/" target="_blank">沙盒</a>
+                                    <a href="https://www.3dmgame.com/tag/hezuo_1/" target="_blank">合作</a>
+                                    <a href="https://www.3dmgame.com/tag/jianzao_1/" target="_blank">建造</a>
+                                </li>
+                            </ol>
+                        </div>
+                        <a href="https://dl.3dmgame.com/pc/138838.html" target="_blank" class="a_click">
+                                                            <i></i>游戏下载 (3.92GB)
+                                                    </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="pagewrap"><ul class="pagination"><li class="first disabled"><span>首页</span></li>
+<li class="prev disabled"><span>上一页</span></li>
+<li class="active"><a href="https://dl.3dmgame.com" data-page="0">1</a></li>
+<li><a href="https://dl.3dmgame.com/all_all_2_time/" data-page="1">2</a></li>
+<li><a href="https://dl.3dmgame.com/all_all_3_time/" data-page="2">3</a></li>
+<li><a href="https://dl.3dmgame.com/all_all_4_time/" data-page="3">4</a></li>
+<li><a href="https://dl.3dmgame.com/all_all_5_time/" data-page="4">5</a></li>
+<li><a href="https://dl.3dmgame.com/all_all_6_time/" data-page="5">6</a></li>
+<li><a href="https://dl.3dmgame.com/all_all_7_time/" data-page="6">7</a></li>
+<li><a href="https://dl.3dmgame.com/all_all_8_time/" data-page="7">8</a></li>
+<li><a href="https://dl.3dmgame.com/all_all_9_time/" data-page="8">9</a></li>
+<li><a href="https://dl.3dmgame.com/all_all_10_time/" data-page="9">10</a></li>
+<li class="next"><a href="https://dl.3dmgame.com/all_all_2_time/" data-page="1">下一页</a></li>
+<li class="last"><a href="https://dl.3dmgame.com/all_all_2354_time/" data-page="2353">末页</a></li></ul></div>
+        </div>
+    </div>
+<script src="https://dl.3dmgame.com/page/js/downl.js"></script>
+<div class="fotter fottertheme">
+    <div class="fottertop2" id="index7">
+        <div class="center clear_">
+            <div class="lefbox fl">
+    <div class="item_ ">
+        <div class="btbox">综合内容</div>
+        <ul class="lis">
+            <li><a href="https://3c.3dmgame.com/" target="_blank"><div class="img"><div class="ico ico1"></div></div> <div class="text">硬件设备</div></a></li>
+            <li><a href="https://bbs.3dmgame.com/" target="_blank"><div class="img"><div class="ico ico2"></div></div><div class="text">游戏论坛</div></a></li>
+            <li><a href="https://www.3dmgame.com/bagua/" target="_blank"><div class="img"><div class="ico ico3"></div></div> <div class="text">娱乐频道</div></a></li>
+            <li><a href="https://www.3dmgame.com/original.html" target="_blank"><div class="img"><div class="ico ico4"></div></div> <div class="text">原创专栏</div></a></li>
+            <li><a href="https://shop.3dmgame.com" target="_blank"><div class="img"><div class="ico ico5"></div></div> <div class="text">游戏商城</div></a></li>
+            <li><a href="https://www.3dmgame.com/hanhua/" target="_blank"><div class="img"><div class="ico ico6"></div></div> <div class="text">游戏汉化</div></a></li>
+        </ul>
+    </div>
+</div>
+<div class="ritbox fr">
+    <div class="item_ fl">
+        <div class="btbox">单机游戏</div>
+        <div class="lis">
+            <a href="https://dl.3dmgame.com/" target="_blank">游戏下载</a>
+            <a href="https://dl.3dmgame.com/patch/" target="_blank">补丁MOD</a>
+            <a href="https://www.3dmgame.com/gl/" target="_blank">原创攻略</a>
+            <a href="https://www.3dmgame.com/xbox/" target="_blank">XBOX360</a>
+            <a href="https://www.3dmgame.com/ps/" target="_blank">P3游戏</a>
+            <a href="https://www.3dmgame.com/release/" target="_blank">发售表</a>
+        </div>
+    </div>
+    <div class="item_ fl">
+        <div class="btbox">手机游戏</div>
+        <div class="lis">
+            <a href="https://shouyou.3dmgame.com/android/" target="_blank">安卓游戏</a>
+            <a href="https://shouyou.3dmgame.com/ios/" target="_blank">苹果游戏</a>
+            <a href="https://shouyou.3dmgame.com/gl/" target="_blank">手游攻略</a>
+            <a href="https://shouyou.3dmgame.com/ka/" target="_blank">手游礼包</a>
+            <a href="https://shouyou.3dmgame.com/zt/" target="_blank">专题合集</a>
+            <a href="https://shouyou.3dmgame.com/phb/" target="_blank">排行榜</a>
+        </div>
+    </div>
+    <div class="item_ fl">
+        <div class="btbox">网络游戏</div>
+        <div class="lis">
+            <a href="https://ol.3dmgame.com/news/" target="_blank">网游资讯</a>
+            <a href="https://ol.3dmgame.com/esports/" target="_blank">竞技赛事</a>
+            <a href="https://ol.3dmgame.com/news_5_1/" target="_blank">网游活动</a>
+            <a href="https://ol.3dmgame.com/ku/" target="_blank">网游大全</a>
+            <a href="https://ol.3dmgame.com/test/" target="_blank">新游试玩</a>
+            <a href="https://ol.3dmgame.com/hao/" target="_blank">激活码</a>
+        </div>
+    </div>
+</div>        </div>    
+    </div>
+    <div class="fotter-bottom">
+    <div class="fotter-link">
+        <a href="https://www.3dmgame.com/s/about.html" target="_blank">关于3DMGAME</a>|<a href="https://www.3dmgame.com/s/joinus.html" target="_blank">招聘信息</a>|<a href="https://www.3dmgame.com/s/sitemap.html" target="_blank">网站地图</a>|<a href="https://www.3dmgame.com/s/contact.html" target="_blank">联系我们</a>|<a href="https://www.3dmgame.com/s/media.html" target="_blank">媒体信息</a>|<a href="https://www.3dmgame.com/s/sqyd.html" target="_blank">家长监护申请引导</a>|<a href="https://www.3dmgame.com/s/jzjh.html" target="_blank">家长监护</a>|<a href="https://www.3dmgame.com/s/tl/index.html" target="_blank">汉化翻译</a>
+        <p> <a href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow">京ICP备14006952号-1</a>   京B2-20201630 &nbsp;&nbsp;京网文（2019）3652-335号 <a target="_blank" rel="nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011202006753"><img src="" style="float:left;"/><span style="color:#939393;">沪公网安备 31011202006753号</span></a>违法和不良信息举报/未成年人举报：legal@3dmgame.com</p>
+        <p>CopyRight©2003-2018 违法和不良信息举报（021-54473036） All Right Reserved</p>
+    </div>
+</div></div>
+<script src="https://www.3dmgame.com/index/js/lazyload.js"></script>
+<script src="https://dl.3dmgame.com/page/js/third/layer.js"></script>
+<script src="https://dl.3dmgame.com/page/js/common.js?v=2305162"></script>
+<script src="https://my.3dmgame.com/newuser/js/user.js"></script>
+<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+<div id="my_login_form" class="login_wrap" style="display: none;">
+    <a href="https://yx.3dmgame.com/yy/yscq/ad" target="_blank" class="img_adspace">
+        <img src="https://img.3dmgame.com/uploads/images/thumbnews/20220810/1660118271_596341.jpg" alt="">
+        <div class="close_btn"></div>
+    </a>
+    <div class="form_login">
+        <div class="title">会员登录</div>
+        <div class="input_wrap login_username">
+            <div class="name_ico">
+                <i></i>
+            </div>
+            <input type="text" title="用户名" name="username" id="loginname" value="" maxlength="" placeholder="请输入手机号 / 论坛账号">
+            <p class="Tipsbox_yes Tips_name" style="display: block;"></p>
+        </div>
+        <div class="input_wrap login_password">
+            <div class="password_ico">
+                <i></i>
+            </div>
+            <input type="password" title="密码" name="passwd" id="loginpassword" value="" required="required" placeholder="请输入密码">
+            <p class="Tipsbox_yes Tips_pswd" style="display: block;"></p>
+        </div>
+        <div class="Tipsbox Tips-name" style="display: none;">
+            <i></i>
+            <p>请输入手机号或论坛账号</p>
+        </div>
+        <div class="Tipsbox Tips-pswd" style="display: none;">
+            <i></i>
+            <p>请输入密码</p>
+        </div>
+        <div class="auto_login">
+            <div class="radiobtn">
+                <input type="checkbox" id="atloginck" value="1" checked="checked" onchange="setautologin(this)">
+                <input type="hidden" name="autologin" id="myautologin" value="1">
+                <span class="inpbg"></span>
+            </div>
+            <label for="atloginck">自动登录</label>
+            <a href="https://my.3dmgame.com/findpasswd" class="forget_link" target="_blank">忘记密码</a>
+            <a href="javascript:void(0);" class="registered_link" onclick="openregister()">新会员注册</a>
+        </div>
+        <a href="javascript:void(0);" class="submit" onclick="login_submit()">登 录</a>
+        <div class="other_login">
+            <p>社交账号登录</p>
+        </div>
+        <div class="other_login_list">
+            <div class="weibo">
+                <i onclick="sina_login()"></i>
+            </div>
+            <div class="weixin">
+                <i onclick="wechat_login()"></i>
+            </div>
+            <div class="QQ">
+                <i onclick="qq_login()"></i>
+            </div>
+        </div>
+    </div>
+    <div class="form_register">
+        <div class="title">3DM 欢迎新人加入</div>
+        <div class="infowrap">
+            <div class="input_lis">
+                <span>区号:</span>
+                <select id="areacode" name="areacode"></select>
+            </div>
+            <div class="input_lis">
+                <span>账号:</span>
+                <input value="" required="required" autocomplete="off" requiredtitle="请输入手机号" patterntitle="国内手机号为11个数字国外手机为区号-手机号!" class="mobile" type="text" name="mobile" id="mobile" placeholder="请输入手机号">
+            </div>
+            <div class="input_lis">
+                <span>密码:</span>
+                <input id="regpasswd" name="regpasswd" value="" required="required" autocomplete="off" title="别忘了密码" class="passwd" type="password" placeholder="请输入密码（6-18位字母、数字、符号）">
+            </div>
+            <div class="input_lis">
+                <span>确认密码:</span>
+                <input id="checkpasswd" name="checkpasswd" value="" required="required" autocomplete="off" title="别忘了密码" class="checkpasswd" type="password" placeholder="再次输入密码">
+            </div>
+            <div class="input_lis yzm_inp">
+                <span>验证码:</span>
+                <input id="validate" name="validate" value="" required="required" requiredtitle="输入验证码" type="text" class="yzm-c" maxlength="16" placeholder="输入验证码">
+                <div class="time " id="TencentCaptcha" data-appid="2072025837" data-cbfn="callback_regcaptcha" >获取验证码</div>
+            </div>
+            <div class="tips">
+                收不到验证码？<span class="feedback" onclick="show_feedback()">去反馈</span>
+            </div>
+            <div class="submit_wrap">
+                <span class="submit" onclick="reg_submit()">注 册</span>
+            </div>
+            <div class="rule_wrap">
+                <input id="rule" name="rule" type="checkbox" checked="checked" value="">
+                <div class="btn_ico2"></div>
+                <label for="rule">我已同意</label><a href="https://my.3dmgame.com/agreement" target="_blank">《3DM账号协议》</a>
+                <div class="tips_login">已有账号？<a id="login2" href="javascript:void(0);" onclick="openlogin()">去登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><script src="https://www.3dmgame.com/page/js/advert.js"></script>
+        <div class="addvide3000"></div>
+        <script>
+            $('body .addvide3000').load("/bottomfaker.html")
+        </script>
+        <style type="text/css">
+        #yxj_fmt_gg{position: fixed;right: 0px;bottom: 0px;z-index: 9999999;}
+       #yxj_fmt_gg span{position: absolute;z-index: 2;right: 0;bottom: 0;width: 66px;height: 18px;cursor: pointer; background: url(/attach/images/closebt.png) no-repeat;}
+        #yxj_fmt_gg span:hover{opacity:0.8;}
+    </style>
+   <div id="yxj_fmt_gg" width="300" height="250"><span></span>
+         <script type="text/javascript">
+             var mediav_ad_pub = 'TjqsOx_2911921';
+             var mediav_ad_width = '300';
+             var mediav_ad_height = '250';
+             var mediav_ad_onfail = function(){ //广告加载失败时的回调函数，可按需使用
+                 console.log('123');
+                 $("#yxj_fmt_gg span").remove()
+             };
+         </script>
+         <script type="text/javascript" language="javascript" charset="utf-8" src="//static.mediav.com/js/mvf_g4.js"></script>
+
+        <!--        <script>-->
+        <!--            (function() {-->
+        <!--                var s = "_" + Math.random().toString(36).slice(2);-->
+        <!--                document.write('<div id="' + s + '"></div>');-->
+        <!--                (window.slotbydup=window.slotbydup || []).push({-->
+        <!--                    id: '5866717',-->
+        <!--                    container: s,-->
+        <!--                    size: '300,250',-->
+        <!--                    display: 'inlay-fix'-->
+        <!--                });-->
+        <!--            })();-->
+        <!--        </script>-->
+
+    </div>
+    <script type="text/javascript">$("#yxj_fmt_gg span").click(function(){$("#yxj_fmt_gg").remove();});</script>
+</body>
+</html>

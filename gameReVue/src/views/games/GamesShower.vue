@@ -3,15 +3,48 @@
     <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane label="全部" name="zero">
         <!-- 搜索 -->
-        <el-input size="small" v-model="input_title" placeholder="请输入标题，可回车搜索..." prefix-icon="el-icon-search"
-           @keydown.enter.native="search_title"></el-input>
+        <el-input
+          size="small"
+          v-model="input_title"
+          placeholder="请输入标题，可回车搜索..."
+          prefix-icon="el-icon-search"
+          @keydown.enter.native="search_title"
+        ></el-input>
         <el-button size="small" type="primary" @click="search_title" icon="el-icon-search">搜索</el-button>
+        <!-- 排序按钮 -->
+        <el-button
+          size="small"
+          :type="sortType === 0 ? 'primary' : 'default'"
+          @click="sortGames(0)"
+        >
+          按时间排序
+        </el-button>
+        <el-button
+          size="small"
+          :type="sortType === 9 ? 'primary' : 'default'"
+          @click="sortGames(9)"
+        >
+          按热度排序
+        </el-button>
+
         <!-- 用户前台游戏列表组件 -->
-        <GamesShowerListCom :tindex="tabindex" v-if="tabindex == 0 && hidden_searchcom == false"></GamesShowerListCom>
+        <GamesShowerListCom
+          :tindex="tabindex"
+          v-if="tabindex == 0 && hidden_searchcom == false"
+        ></GamesShowerListCom>
+        <!-- 用户前台游戏列表组件 -->
+        <GamesShowerListCom
+          :tindex="tabindex"
+          v-if="tabindex == 9 && hidden_searchcom == false"
+        ></GamesShowerListCom>
         <!-- 搜索专用组件 -->
-        <GamesShowerSearch v-if="tabindex == 0 && hidden_searchcom == true" :gamesData="gamesData"></GamesShowerSearch>
+        <GamesShowerSearch
+          v-if="tabindex == 0 && hidden_searchcom == true"
+          :gamesData="gamesData"
+        ></GamesShowerSearch>
       </el-tab-pane>
 
+      <!-- 其他选项卡保持不变 -->
       <el-tab-pane label="角色扮演" name="first">
         <GamesShowerListCom :tindex="tabindex" v-if="tabindex == 1"></GamesShowerListCom>
       </el-tab-pane>
@@ -40,6 +73,7 @@
   </div>
 </template>
 
+
 <script>
 import GamesShowerListCom from '@/views/games/GamesShowerListCom.vue';
 import GamesShowerSearch from '@/views/games/GamesShowerSearch.vue';
@@ -55,15 +89,20 @@ export default {
     return {
       activeName: 'zero',
       input_title: '', // 输入框的值
-      gamesData: [], // 文章数据
-      tabindex: "0", // 选项卡index
+      gamesData: [], // 游戏数据
+      tabindex: '0', // 选项卡index
       hidden_searchcom: false, // 是否隐藏搜索子组件
+      sortType: 0, // 当前排序类型（0: 按时间, 9: 按热度）
     };
   },
   methods: {
     handleClick(tab, event) {
       this.tabindex = tab.index;
       // console.log("tabindex = " + this.tabindex);
+    },
+    sortGames(type) {
+      this.sortType = type; // 更新排序类型
+      this.tabindex = ''+type;
     },
     search_title() {
       if (this.input_title === '') {

@@ -1,5 +1,4 @@
 <template>
-    <div>
         <!-- ref="loginForm" 绑定校验表单 -->
         <el-form :rules="rules" :model="loginForm" class="loginContainer" ref="loginForm">
             <h3 class="loginTitle">游戏推荐系统后台登录</h3>
@@ -11,11 +10,24 @@
             <el-form-item prop="password">
                 <el-input type="password" v-model="loginForm.password" auto-complete="off" placeholder="请输入密码" @keydown.enter.native="submitLogin"></el-input>
             </el-form-item>
+            <el-form-item prop="captcha">
+            <Captcha
+                ref="captchaRef"
+                :width="'200px'"
+                :height="'80px'"
+                :number="4"
+                :night="false"
+                @getValue="updateCaptchaValue"
+            />
+            <el-input
+                v-model="loginForm.captcha"
+                placeholder="请输入验证码,"
+            ></el-input>
+        </el-form-item>
             <el-checkbox class="loginRember" v-model="checked">记住我</el-checkbox>
             <el-button style="margin-left:20px;height:25px;" @click="registerDialog= true">注册</el-button>
             <el-button type="primary" style="width: 100%" @click="submitLogin">登录</el-button>
         </el-form>
-    </div>
 
       
       <!-- 注册 -->
@@ -25,7 +37,7 @@
         width="30%"
         >
         <el-form ref="registerForm" status-icon :model="registerForm" :rules="rules1" label-width="120px">
-          <el-form-item  label="邮箱/手机号：" prop="phone">
+          <el-form-item  label="手机号：" prop="phone">
             <el-input v-model="registerForm.phone" placeholder=""></el-input>
           </el-form-item>
           <el-form-item   label="昵称：" prop="userName">
@@ -45,9 +57,13 @@
 <script>
 // 登录组件中的逻辑处理
     import eventBus from '@/eventBus';
+    import Captcha from '../components/Captcha.vue';
     export default {
         inject:['postKeyValueRequest','postRequest','putRequest','getRequest','deleteRequest'],
         name: "Login",
+        components: {
+            Captcha,
+        },
         data(){
             return{
                 registerForm:{
@@ -56,16 +72,17 @@
                     userName:'泥航玩家',
                     password:'',
                 },
+                generatedCaptcha: "", // 存储生成的验证码
                 registerDialog:false,
                 loginForm:{
                   userName:"admin",
                   password:"123"
                 },
                 checked:true,
-                rules:{
-                    //required:true:用户名必填  如果没填就弹出““””“"请输入用户名",trigger:blur 触发的方式是blur
-                    userName:[{required:true,message:"用户名不能为空",trigger:"blur"}],
-                    password:[{required:true,message:"密码不能为空",trigger:"blur"}],
+                rules: {
+                    userName: [{ required: true, message: "用户名不能为空", trigger: "blur" }],
+                    password: [{ required: true, message: "密码不能为空", trigger: "blur" }],
+                    captcha: [{ required: true, message: "请输入验证码", trigger: "blur" }],
                 },
                 rules1: {  //表单校验
                     email: [
@@ -86,9 +103,18 @@
             }
         },
         methods:{
+            // 更新生成的验证码值
+            updateCaptchaValue(captchaValue) {
+                this.generatedCaptcha = captchaValue;
+            },
             submitLogin(){
                 this.$refs.loginForm.validate((validate) =>{  // Element自带的校验
                     if(validate){
+                        if (this.loginForm.captcha.toUpperCase() !== this.generatedCaptcha.toUpperCase()) {
+                            this.$message.error("验证码错误，请重新输入！");
+                            this.$refs.captchaRef.generateCaptcha(); // 重新生成验证码
+                            return;
+                        }
                         //alert("submit!");
                         //console.log(this.loginForm)
                         this.postKeyValueRequest('/doLogin',this.loginForm).then(resp=>{

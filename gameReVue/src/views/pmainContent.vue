@@ -27,7 +27,7 @@
           <div class="game-info">
             <h3 class="game-title">{{ game.name }}</h3>
             <p class="game-score">⭐ Score: {{ game.score }}</p>
-            <button @click="viewGame(game.id)" class="view-details-btn">了解{{game.id}}详情</button>
+            <button @click="viewGame(game.id)" class="view-details-btn">了解详情</button>
           </div>
         </div>
       </el-carousel-item>
@@ -41,7 +41,7 @@
       <el-carousel-item v-for="blog in blogsData" :key="blog.id">
         <div class="blog-card">
           <div class="blog-image-wrapper">
-            <img :src="blog.first_picture" alt="Blog Image" class="blog-image" />
+            <img :src="blog.firstPicture" alt="Blog Image" class="blog-image" />
           </div>
           <div class="blog-info">
             <h3 class="blog-title">{{ blog.title }}</h3>
@@ -181,7 +181,7 @@ h2 {
 }
 
 .game-image, .blog-image {
-  width: 100%;
+  width: 80%;
   height: 100%;
   object-fit: cover;
 }

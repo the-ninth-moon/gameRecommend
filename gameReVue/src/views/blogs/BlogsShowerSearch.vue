@@ -1,42 +1,38 @@
 <template>
     <div>
-          <!-- 博客文章 -->
-          <el-table
-              :data="blogsData"
-              stripe
-              style="width: 100%">
-              <el-table-column label="文章列表" min-width="180">
-              <template #default="scope">
-                  <el-card  class="box-card">
-                  <div style="font-size: 18px;">
-                      <!-- v-if="!scope.row.shareStatement" 这里根据shareStatement属性判断文章是否为草稿 -->
-                      <el-button size="mini" v-if="!scope.row.shareStatement" type="info" icon="el-icon-edit" circle></el-button>
-                      {{scope.row.title}}
-                  </div>
-                  <div style="margin-top: 10px;">
+      <!-- 博客文章 -->
+      <div class="blog-card-container">
+        <el-card
+          v-for="(blog, index) in blogsData"
+          :key="index"
+          class="blog-card"
+        >
+          <img :src="blog.firstPicture" alt="Blog Cover" class="blog-cover" />
+          <div class="blog-content">
+            <h3>{{ blog.title }}</h3>
+            <p class="blog-date">{{ formatDate(blog.updateTime) }}</p>
+            <p class="blog-description">{{ blog.content.slice(0, 30) }}...</p>
+            <el-button @click="viewBlog(blog.id)" type="primary" size="small">阅读更多</el-button>
+          </div>
+        </el-card>
+      </div>
   
-                      <el-tag size="small" style="margin-right: 10px;"  v-if="scope.row.isDelete" type="danger">已删除</el-tag>
-                      <el-tag size="small" style="margin-right: 10px;"  v-if="!scope.row.shareStatement" type="warning">草稿</el-tag>
-                      <el-tag style="margin-right: 10px;" v-if="scope.row.shareStatement" size="small">{{scope.row.flag}}</el-tag>
-                      <el-tag style="margin-right: 20px;" v-if="scope.row.shareStatement" size="small" type="info">{{scope.row.published == '0' ? '私密' : '公开'}}</el-tag>
-                      <i style="margin-right: 20px;"><el-icon style="transform: translateY(2px); margin-right: 4px;"><View /> </el-icon>{{scope.row.views}}</i>
-                      <i style="margin-right: 20px;"><el-icon style="transform: translateY(2px); "><ChatSquare /></el-icon> {{scope.row.commentCount}} </i>
-                      <i style="margin-right: 20px;"><el-icon style="transform: translateY(2px); margin-right: 4px;"><Calendar /></el-icon> {{scope.row.createTime}}</i>
-                         
-                      <el-button style="float: right;" type="danger" size="mini">删除</el-button>
-                      <el-button style="float: right; margin-right: 10px;" type="primary" size="mini">编辑</el-button>
-                  
-                  </div>
-  
-                  </el-card>
-              </template>
-                  
-              </el-table-column>
-          </el-table>
-  
+      <!-- 分页 -->
+      <!-- <div v-if="!hidden_page" style="margin-top: 20px;">
+        <el-pagination
+          background
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page="currentPage"
+          :page-sizes="pagesizes"
+          :page-size="pagesize"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="total"
+        ></el-pagination>
+      </div> -->
     </div>
   </template>
-  
+
   <script>
   export default {
     inject:['postKeyValueRequest','postRequest','putRequest','getRequest','deleteRequest'],
@@ -49,10 +45,60 @@
     },
     props:["blogsData"], //接收父组件传过来的值
     methods:{
+        formatDate(dateString) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(dateString).toLocaleDateString(undefined, options);
+      },
+      viewBlog(id) {
+        this.$router.push({ path: `/blogs/${id}` });
+      }
     }
   }
   </script>
   
   <style scoped>
-  
+  .blog-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.blog-card {
+  flex: 0 0 calc(25% - 10px); /* 每个卡片占25%，减去左右边距 */
+  max-width: calc(25% - 10px); /* 最大宽度 */
+  margin-bottom: 10px;
+}
+.box-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.image-container {
+  flex: 1;
+  overflow: hidden;
+}
+.blog-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1; /* 让信息区充满卡片剩余空间 */
+  padding: 10px 0;
+}
+.blog-name {
+  margin-bottom: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tags {
+  margin-bottom: 5px;
+}
+.meta-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.meta-info span {
+  margin-left: 5px;
+}
   </style>
