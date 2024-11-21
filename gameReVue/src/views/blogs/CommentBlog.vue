@@ -2,32 +2,32 @@
   <div>
       <div style="margin-top: 20px;">
           <!-- 搜索 -->
-          <el-input size="small" v-model="input_name" placeholder="请输入评论人名称，可回车搜索..." prefix-icon="el-icon-search"
+          <!-- <el-input size="small" v-model="input_name" placeholder="请输入评论人名称，可回车搜索..." prefix-icon="el-icon-search"
           style="width: 400px;margin-right: 10px;" @keydown.enter.native="search_name"></el-input>
-          <el-button size="small" type="primary"  @click="search_name" icon="el-icon-search">搜索</el-button>
+          <el-button size="small" type="primary"  @click="search_name" icon="el-icon-search">搜索</el-button> -->
           <!-- <el-button size="small" type="success"  @click="dialog_add = true" icon="el-icon-plus">新增</el-button> -->
       </div>
       <div>
           <el-table
           :data="commentData"
-          style="width: 100%">
+          >
           <el-table-column
             label="编号"
-            width="70">
+            width="200">
             <template #default=scope> 
               <span style="margin-left: 10px">{{ scope.row.id }}</span>
             </template>
           </el-table-column>
           <el-table-column
-            label="昵称"
-            width="150">
+            label="ID"
+            width="100">
             <template #default=scope>
-              <el-tag size="medium">{{ scope.row.nickname }}</el-tag>
+              <el-tag size="medium">{{ scope.row.userId }}</el-tag>
             </template>
           </el-table-column>
           <el-table-column
             label="身份"
-            width="100">
+            width="150">
             <template #default=scope>
               <el-tag v-if="scope.row.adminComment" type="danger" size="medium">管理员</el-tag>
               <el-tag v-if="!scope.row.adminComment" size="medium">普通用户</el-tag>
@@ -35,7 +35,7 @@
           </el-table-column>
           <el-table-column
             label="评论内容"
-            width="300">
+            width="350">
             <template #default=scope>
               <el-tag size="medium">{{ scope.row.content }}</el-tag>
             </template>
@@ -49,7 +49,7 @@
           </el-table-column>
           <el-table-column
             label="推文名"
-            width="200">
+            width="250">
             <template #default=scope>
               <el-tag size="medium">{{ scope.row.parentNickname }}</el-tag>
             </template>
@@ -130,7 +130,7 @@ export default {
       commentData:[{id:"1",userId:"1",role:"1",content:"原神真是太好玩啦！",createTime:"2023-11-11",blogId:"1"},],  //评论数据
       currentPage: 1,  //当前页
       total:0, //总记录数
-      pagesize:5, //页面大小
+      pagesize:15, //页面大小
       input_name:'', //搜索框值
       dialog_add: false, //添加评论的对话框
       dialog_edit: false, //编辑评论的对话框
