@@ -11,17 +11,37 @@
         <div class="team-member">
           <img src="https://img.hongyoubizhi.com/picture/pages/regular/2022/02/18/20/17/96311355_p0_master1200.jpg" alt="王嘉鋆" />
           <h2>王嘉鋆 - 组员</h2>
-          <p>王嘉鋆负责数据库数据的填充，并对功能进行了充分测试。</p>
+          <p>王嘉鋆负责数据库数据的填充，并对功能进行了充分测试，同时负责完善了项目计划、项目测试文档。</p>
         </div>
   
         <div class="team-member">
           <img src="https://img.hongyoubizhi.com/picture/pages/regular/2021/01/17/05/40/87036407_p0_master1200.jpg" alt="张修铭" />
           <h2>张修铭 - 组员</h2>
-          <p>张修铭负责了一部分前端开发和数据库的填充。</p>
+          <p>张修铭负责了一部分前端开发和数据库的填充，同时负责完善了数据库设计、结项评审文档。</p>
         </div>
       </div>
     </div>
 
+    <div class="introduce">
+      <h1>技术栈</h1>
+      <p>
+        后端：SpringBoot<br>
+        前端：Vue + Element-Plus <br>
+        数据库：Mysql <br>
+        服务器环境：阿里云 Ubuntu22.04
+      </p>
+    </div>
+    <div class="introduce">
+      <h1>关于验证码部分的说明</h1>
+      <p>
+        由于向手机发送验证码的api审核没有通过（需要网站提前备案）<br>
+        <img style="width:50%" src="https://imgcache.qq.com/operation/dianshi/other/smsv2.f51231111396fe42300595f62ae3f67f9d44b89f.png" alt="困难" />
+        该部分实现如下所述：<br>
+        1.完成了前端向后端请求验证码的部分。<br>
+        2.后端接受请求后，生成验证码被规定为1234以便于后续使用（随机生成的话就不知道说什么了）<br>
+        3.完成前端向后端验证验证码的部分。<br>
+      </p>
+    </div>
     <div class="reflection">
       <h2>软件工程课设的感悟</h2>
       <p>
@@ -65,8 +85,8 @@
   }
   
   .team-member img {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     margin-bottom: 1rem;
   }
@@ -78,6 +98,13 @@
   .team-member p {
     font-size: 14px;
     color: #555;
+  }
+
+  .introduce p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1rem;
   }
 
   .reflection {
@@ -120,5 +147,44 @@
   }
 }
 
+.introduce {
+    background: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.introduce h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.introduce p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.introduce img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* 链接样式 */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
   </style>
   

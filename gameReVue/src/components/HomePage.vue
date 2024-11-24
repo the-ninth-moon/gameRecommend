@@ -6,8 +6,11 @@
         <div class="logo">S T R E A M</div>
         <ul class="nav-links">
           <RouterLink to="/home">首页</RouterLink>
-          <RouterLink to="/games">游戏</RouterLink>
-          <RouterLink to="/blogs">推文</RouterLink>
+          <!-- 游戏按钮 -->
+          <button class="butt" @click="navigateTo('/games')">游戏</button>
+
+          <!-- 推文按钮 -->
+          <button class="butt" @click="navigateTo('/blogs')">推文</button>
           <RouterLink to="/about">关于我们</RouterLink>
           <RouterLink v-if="!isLoggedIn" to="/login">登录</RouterLink>
           <RouterLink v-else :to="userCenterLink">{{ userCenterText }}</RouterLink>
@@ -88,6 +91,19 @@ export default {
     this.initBlogs();
   },
   methods: {
+    //给sessionStorage存值
+    setContextData: function (key, value) {
+    if (typeof value == "string") {
+        sessionStorage.setItem(key, value);
+    } else {
+        sessionStorage.setItem(key, JSON.stringify(value));
+    }
+    },
+    navigateTo(path) {
+      this.$router.push(path);
+      this.setContextData("currentPage",1);
+      this.setContextData("currentBPage",1);
+    },
     isMobile() {
         this.flag = navigator.userAgent.match(
   /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
@@ -176,6 +192,25 @@ export default {
   padding: 10px 15px;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+.butt{
+  color: #ecf0f1;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color:  #2c3e50;
+  color: #fff;
+  border: None;
+  border-radius: 5px;
+}
+
+.butt:hover{
+  background-color: #3498db;
+  color: #fff;
 }
 
 /* 悬停时的导航链接样式 */

@@ -254,8 +254,8 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         tBlog.setDescription((String) params.get("description"));
         tBlog.setFirstPicture((String) params.get("first_picture"));
         tBlog.setContent((String) params.get("content"));
-        tBlog.setPublished(Objects.equals(params.get("published").toString(), "1"));
-        tBlog.setShareStatement(Objects.equals(params.get("shareStatement").toString(), "1")); //设置状态为已发布
+        tBlog.setPublished(Objects.equals(params.get("published").toString(), "true"));
+        tBlog.setShareStatement(Objects.equals(params.get("shareStatement").toString(), "true")); //设置状态为已发布
         tBlog.setProcessed(false);
 
         Game game= gameMapper.getGameIdByName((String) params.get("gameName"));

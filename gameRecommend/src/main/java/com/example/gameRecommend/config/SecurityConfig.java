@@ -62,17 +62,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         ignoring.antMatchers(String.valueOf(HttpMethod.POST), "/user/register");//nice，硬解码就硬解码，无所谓了
     }
 
-
-    //要有一个configure方法吧Service整进来 为什么会不需要
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-//        System.out.println(2);
-//        auth.userDetailsService(customUserService);
-//        //基于内存来存储用户信息
-//        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder())
-//                .withUser("admin").password("123").roles("USER","ADMIN");
-//    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //System.out.println(3);
@@ -80,8 +69,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.authorizeRequests()
                 //允许根路径url的访问
-                .antMatchers("/","/blog/getByPage","/game/getByPage","/game-image/gameImage/1").permitAll()
-                //允许swagger-ui.html访问
+                .antMatchers("/","/blog/getByPage","/game/getByPage","/game-image/gameImage/1",
+                        "/user/sendCaptcha","/user/verifyCaptcha","user/fupdatePwd","/user/rsendCaptcha",
+                        "/user/loginverifyCaptcha").permitAll()
+                //允许swagger-ui.html访问,
                 .antMatchers("/swagger-ui.html").permitAll()
                 .anyRequest().authenticated().and()
                 .formLogin()
@@ -115,13 +106,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 })
                 .failureHandler(new AuthenticationFailureHandler() {
                     @Override
-                    public void onAuthenticationFailure(HttpServletRequest req, HttpServletResponse resp,
-                                                        AuthenticationException exception) throws IOException, ServletException {
+                    public void onAuthenticationFailure(HttpServletRequest req, HttpServletResponse resp,AuthenticationException exception) throws IOException, ServletException {
                         //如果登录失败也返回一段json
                         resp.setContentType("application/json;charset=utf-8");
                         //设置状态码
                         //resp.setStatus(401);
-
                         //这是往出写的
                         PrintWriter out = resp.getWriter();
                         Result result = Result.fail("登录失败！");

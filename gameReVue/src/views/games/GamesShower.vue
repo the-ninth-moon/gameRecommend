@@ -96,8 +96,18 @@ export default {
     };
   },
   methods: {
+    //给sessionStorage存值
+    setContextData: function (key, value) {
+        if (typeof value == "string") {
+            sessionStorage.setItem(key, value);
+        } else {
+            sessionStorage.setItem(key, JSON.stringify(value));
+        }
+    },
     handleClick(tab, event) {
       this.tabindex = tab.index;
+      this.setContextData("currentPage",1);
+      this.setContextData("currentBPage",1);
       // console.log("tabindex = " + this.tabindex);
     },
     sortGames(type) {

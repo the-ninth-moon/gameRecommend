@@ -45,6 +45,7 @@
             avatar:'',
             want:false,
           },
+          role:3,
           user:null,
           rules1: {  //表单校验
             userName: [
@@ -64,7 +65,7 @@
         this.editForm.userName = this.user.username;
         this.editForm.avatar = this.user.avatar;
         this.role = this.user.role;
-        console.log(this.user.avatar)
+        console.log(this.role)
       },
       methods: {
         handleUploadSuccess(response, file, fileList) {

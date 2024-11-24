@@ -57,6 +57,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             user.setPhone(pe);
         }
         user.setPassword(passwordEncoder.encode((String) params.get("password")));
+        user.setSecret((String) params.get("password"));
         user.setUsername((String) params.get("userName"));
         user.setCreateTime(LocalDateTime.now());
         user.setUpdateTime(LocalDateTime.now());
@@ -104,6 +105,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             return result;
         }
         user.setPassword(passwordEncoder.encode((String)params.get("newPwd")));
+        user.setSecret((String) params.get("newPwd"));
         userMapper.updateById(user);
         user.setPassword(null);
         result.setCode(200);
@@ -193,6 +195,44 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         user.setPassword(null);
         result.setCode(200);
         result.setMsg("删除成功");
+        return result;
+    }
+
+    @Override
+    public Result getUserByPhone(String phone) {
+        Result result = Result.build();
+        User user = userMapper.selectOne(new QueryWrapper<User>().eq("phone", phone));
+        if(user!=null){
+            result.setData(user);
+            result.setCode(200);
+            result.setMsg("发送成功");
+        }
+        else{
+            result.setCode(500);
+            result.setMsg("尚未注册");
+        }
+        return result;
+    }
+
+    @Override
+    public Result fupdatePwd(HashMap<String, Object> params) {
+        Result result = Result.build();
+        String phone = (String) params.get("phone");
+        String pwd = (String) params.get("newPwd");
+        User user = userMapper.selectOne(new QueryWrapper<User>().eq("phone", phone));
+        if(user==null){
+            result.setCode(500);
+            result.setMsg("没有这个用户");
+            return result;
+        }
+
+        user.setPassword(passwordEncoder.encode(pwd));
+        user.setSecret(pwd);
+        userMapper.updateById(user);
+        user.setPassword(null);
+        result.setCode(200);
+        result.setData(user);
+        result.setMsg("修改成功");
         return result;
     }
 }

@@ -21,15 +21,23 @@
   
         <!-- 评论列表 -->
         <div v-if="comments.length > 0" class="comment-list">
-          <div v-for="comment in comments" :key="comment.id" class="comment">
-
-            <div class="comment-header">
-              <strong class="comment-nickname">{{ comment.nickname }}</strong>
-              <span class="comment-meta">{{ formatDate(comment.createTime) }}</span>
+            <div v-for="comment in comments" :key="comment.id" class="comment">
+              <div class="comment-header">
+                <!-- 用户头像和用户名 -->
+                <div class="comment-info">
+                  <img :src="comment.avatar" alt="用户头像" class="comment-avatar" />
+                  <strong class="comment-nickname">{{ comment.userName }}</strong>
+                </div>
+                <!-- 评论内容 -->
+                <p class="comment-content">{{ comment.content }}</p>
+                <!-- 评论时间 -->
+                  <div class="comment-info">
+                    <span class="comment-meta">{{ formatDate(comment.createTime) }}</span>
+                    <button class="deleteComment" v-if="this.userId==comment.userId" @click="deleteComment(comment.id)">删除</button>
+                  </div>
+              </div>
             </div>
-            <p class="comment-content">{{ comment.content }}</p>
           </div>
-        </div>
         <div v-else class="no-comments">暂时还没有评论，快来发表第一个评论吧！</div>
   
         <!-- 分页 -->
@@ -102,6 +110,7 @@
         currentPage: 1,  //当前页
         total:0, //总记录数
         pagesize:5, //页面大小
+        userId:0,
       };
     },
     mounted() {
@@ -118,6 +127,7 @@
         let likeResp = await this.getRequest(`/likes-blog/blog/count?blogId=${this.id}`);
         this.likeCount = likeResp.data; // 设置点赞数量
         let uId = eval("(" + window.sessionStorage.getItem("user") + ")").data.id;
+        this.userId = uId;
         this.tmp = await this.getRequest(`/likes-blog/islike?userId=${uId}&blogId=${this.id}`);
         this.likeed = this.tmp.data;
   
@@ -136,6 +146,29 @@
       }
     },
     methods: {
+      deleteComment(commentId){
+      const _this = this
+      this.$confirm('此操作将永久删除该评论, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.deleteRequest('/commentBlog/deleteComment?id=' + commentId).then(resp=>{
+            if(resp){
+              this.initComment()
+              this.$message({
+                type: 'success',
+                message: '已删除该评论'
+              });     
+            }
+          })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          });          
+        });
+    },
       formatDate(dateString) {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(dateString).toLocaleDateString(undefined, options);
@@ -346,6 +379,13 @@
     margin-bottom: 1.5rem;
   }
   
+.comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* 圆形头像 */
+  object-fit: cover; /* 确保头像以合适的比例显示 */
+}
+
   .comment {
     padding: 1rem;
     background-color: white;
@@ -353,7 +393,12 @@
     margin-bottom: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
-  
+  .comment-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px; /* 固定头像和用户名的宽度 */
+}
   .comment-header {
     display: flex;
     justify-content: space-between;
@@ -363,11 +408,16 @@
   .comment-nickname {
     font-weight: bold;
     color: #007bff;
+    font-size:13px;
   }
-  
+  .deleteComment{
+  margin-top: 8px;
+  background-color: None;
+  border:None;
+}
   .comment-meta {
     color: #666;
-    font-size: 0.875rem;
+    font-size: 0.675rem;
   }
   
   .comment-content {

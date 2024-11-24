@@ -39,6 +39,9 @@ import MyfavorGame from '@/views/users/MyfavorGame.vue'
 import MyfavorBlog from '@/views/users/MyfavorBlog.vue'
 import pMyfavorBlog from '@/views/users/pMyfavorBlog.vue'
 import pMyfavorGame from '@/views/users/pMyfavorGame.vue'
+import Register from '@/components/register.vue'
+import PhoneLog from '@/components/PhoneLog.vue'
+import pLogin from '@/components/pLogin.vue'
 
 const routes = [
 
@@ -57,7 +60,10 @@ const routes = [
       { path: '/pgames', name: 'p游戏',  component:pGamesShower  },
       { path: '/pblogs', name: 'p推文',  component: pBlogsShower },
       { path: '/pabout', name: 'p关于我们',  component: aboutUs  },
-      { path: '/plogin', name: 'p登录',  component: Login  },
+      { path: '/plogin', name: 'p登录',  component: pLogin  },
+      { path: '/plogin/resetPassWord',name: 'pResetPassWord',component: ResetPassWord, hidden:true, },
+      { path: '/plogin/register',name: 'pRegister',component: Register, hidden:true, },
+      { path: '/plogin/phoneLogin',name: 'pphoneLogin',component: PhoneLog, hidden:true, },
       { path: '/pgames/:id', name: 'p游戏详情',  component: GameShower,props:true,hidden:true  },
       { path: '/pblogs/:id', name: 'p推文详情',  component: pBlogShower,props:true,hidden:true  },
 
@@ -74,9 +80,13 @@ const routes = [
       { path: '/blogs', name: '推文',  component: BlogsShower },
       { path: '/about', name: '关于我们',  component: aboutUs  },
       { path: '/login', name: '登录',  component: Login  },
+      { path: '/forget', name: '找回密码',  component: ResetPassWord },
       { path: '/games/:id', name: '游戏详情',  component: GameShower,props:true,hidden:true  },
       { path: '/blogs/:id', name: '推文详情',  component: BlogShower,props:true,hidden:true  },
-
+      { path: '/login/resetPassWord',name: 'ResetPassWord',component: ResetPassWord, hidden:true, },
+      { path: '/login/register',name: 'Register',component: Register, hidden:true, },
+      { path: '/login/phoneLogin',name: 'phoneLogin',component: PhoneLog, hidden:true, },
+      
     ]
   },
   {
@@ -85,12 +95,7 @@ const routes = [
     component: Login,
     hidden:true,
   },
-  {
-    path: '/login/resetPassWord',
-    name: 'ResetPassWord',
-    component: ResetPassWord,
-    hidden:true,
-  },
+
 
   {
     path: '/admin/home',

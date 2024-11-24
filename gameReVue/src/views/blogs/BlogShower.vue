@@ -30,7 +30,10 @@
                 <!-- 评论内容 -->
                 <p class="comment-content">{{ comment.content }}</p>
                 <!-- 评论时间 -->
-                <span class="comment-meta">{{ formatDate(comment.createTime) }}</span>
+                  <div class="comment-info">
+                    <span class="comment-meta">{{ formatDate(comment.createTime) }}</span>
+                    <button class="deleteComment" v-if="this.userId==comment.userId" @click="deleteComment(comment.id)">删除</button>
+                  </div>
               </div>
             </div>
           </div>
@@ -107,6 +110,7 @@ export default {
       currentPage: 1,  //当前页
       total:0, //总记录数
       pagesize:5, //页面大小
+      userId:0,
     };
   },
   mounted() {
@@ -123,6 +127,7 @@ export default {
       let likeResp = await this.getRequest(`/likes-blog/blog/count?blogId=${this.id}`);
       this.likeCount = likeResp.data; // 设置点赞数量
       let uId = eval("(" + window.sessionStorage.getItem("user") + ")").data.id;
+      this.userId = uId;
       this.tmp = await this.getRequest(`/likes-blog/islike?userId=${uId}&blogId=${this.id}`);
       this.likeed = this.tmp.data;
 
@@ -141,6 +146,29 @@ export default {
     }
   },
   methods: {
+    deleteComment(commentId){
+      const _this = this
+      this.$confirm('此操作将永久删除该评论, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.deleteRequest('/commentBlog/deleteComment?id=' + commentId).then(resp=>{
+            if(resp){
+              this.initComment()
+              this.$message({
+                type: 'success',
+                message: '已删除该评论'
+              });     
+            }
+          })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          });          
+        });
+    },
     formatDate(dateString) {
       const options = { year: 'numeric', month: 'long', day: 'numeric' };
       return new Date(dateString).toLocaleDateString(undefined, options);
@@ -382,7 +410,11 @@ h2 {
   flex: 1;
   margin-left: 16px; /* 评论与头像之间的间距 */
 }
-
+.deleteComment{
+  margin-top: 8px;
+  background-color: None;
+  border:None;
+}
 .comment-meta {
   white-space: nowrap;
   margin-left: 16px; /* 确保时间显示在右侧 */

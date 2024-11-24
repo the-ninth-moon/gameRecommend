@@ -60,9 +60,30 @@ data () {
 props: ["tindex"],
 mounted() {
     this.initIndex();
+    this.currentPage = this.getContextData("currentPage") || 1;
     this.initGames(); // 调用初始化游戏数据
 },
 methods: {
+        //给sessionStorage存值
+    setContextData: function (key, value) {
+      if (typeof value == "string") {
+          sessionStorage.setItem(key, value);
+      } else {
+          sessionStorage.setItem(key, JSON.stringify(value));
+      }
+  },
+      // 从sessionStorage取值
+      getContextData: function (key) {
+          const str = sessionStorage.getItem(key);
+          if (typeof str == "string") {
+              try {
+                  return JSON.parse(str);
+              } catch (e) {
+                  return str;
+              }
+          }
+          return;
+      },
     initIndex(){
         this.t2index = this.tindex; // 保存父组件传过来的值
     },
@@ -84,6 +105,7 @@ methods: {
     },
     handleCurrentChange(val) {
         this.currentPage = val;
+        this.setContextData("currentPage",this.currentPage);
         this.initGames();
     },
     handleSizeChange(val) {

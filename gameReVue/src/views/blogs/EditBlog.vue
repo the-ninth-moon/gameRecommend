@@ -14,24 +14,33 @@
            <el-input v-model="editForm.description"></el-input>
          </el-form-item>
          <el-form-item label="首页图片" prop="first_picture">
-           <el-input v-model="editForm.first_picture"></el-input>
-         </el-form-item>
+          <el-input v-model="editForm.first_picture"></el-input>
+            <el-upload
+              class="blog-uploader"
+              action="/api/upload/blog"  
+              :on-success="handleUploadSuccess"
+              :before-upload="beforeUpload"
+              accept="image/*"
+              :show-file-list="false">
+              <el-button size="small" type="primary">上传图片</el-button>
+            </el-upload>
+          </el-form-item>
          <el-form-item label="文章类型" prop="original" >
            <el-select v-model="editForm.original" placeholder="请选择文章类型，默认为原创">
              <el-option label="原创" value="true"></el-option>
              <el-option label="转载" value="false"></el-option>
            </el-select>
          </el-form-item>
-         <el-form-item label="是否发布" prop="share_statement">
-            <el-select v-model="editForm.share_statement" placeholder="选择是否发布，默认发布">
+         <el-form-item label="是否发布" prop="shareStatement">
+            <el-select v-model="editForm.shareStatement" placeholder="选择是否发布，默认发布">
               <el-option label="发布" value="true"></el-option>
               <el-option label="草稿" value="false"></el-option>
             </el-select>
           </el-form-item>
           <el-form-item label="发布形式" prop="published">
             <el-select v-model="editForm.published" placeholder="请选择发布形式，默认为私密">
-              <el-option label="私密" value="false"></el-option>
-              <el-option label="公开" value="true"></el-option>
+              <el-option label="私密" value=false></el-option>
+              <el-option label="公开" value=true></el-option>
             </el-select>
           </el-form-item>
          <!-- mavon-editor代码在vue3中有问题 -->
@@ -58,8 +67,8 @@
                required: true, message: '发布形式不能为空', trigger: 'blur'
              }">
            <el-select v-model="editForm.published" placeholder="请选择发布形式，，默认为私密">
-             <el-option label="私密" value=0></el-option>
-             <el-option label="公开" value=1></el-option>
+             <el-option label="私密" value=false></el-option>
+             <el-option label="公开" value=true></el-option>
            </el-select>
          </el-form-item>
          
@@ -90,7 +99,7 @@
             original: true,
             processed:null,
             published: null,
-            share_statement:true,
+            shareStatement:true,
             tags: [],
           },
           oldtags:'',  //字符串类型的标签
@@ -126,7 +135,7 @@
             published: [
               {required: true, message: '发布形式不能为空', trigger: 'blur'}
             ],
-            share_statement: [
+            shareStatement: [
               {required: true, message: '是否已经发布不能为空', trigger: 'blur'}
             ],
           },
@@ -149,7 +158,24 @@
       created(){
 
       },
+    
       methods: {
+        handleUploadSuccess(response, file, fileList) {
+        // 上传成功后的处理
+        if (response && response.data && response.data.url) {
+          this.editForm.first_picture = response.data.url;  // 设置返回的 URL
+        } else {
+          this.$message.error('头像上传失败');
+        }
+      },
+      beforeUpload(file) {
+        // 可以在此检查文件类型、大小等
+        const isImage = file.type.startsWith('image/');
+        if (!isImage) {
+          this.$message.error('只能上传图片');
+        }
+        return isImage;
+      },
         handleClose(tag) {
           this.editForm.tblogTags.splice(this.editForm.tblogTags.indexOf(tag), 1);
         },
@@ -177,9 +203,9 @@
           console.log(resp)
           _this.editForm = resp.data.data
           //右侧的是后端传来的，即Java类中名字
-          _this.editForm.published = _this.editForm.published  ? "公开":"私密"
+          _this.editForm.published = _this.editForm.published=="公开"  ? "公开":"私密"
           _this.editForm.type_id = _this.editForm.typeId + ''
-          _this.editForm.share_statement = _this.editForm.shareStatement == true ? "发布" : "草稿"
+          _this.editForm.shareStatement = _this.editForm.shareStatement == "发布" ? "发布" : "草稿"
           _this.editForm.original = _this.editForm.original = true ? "原创" : "转载"
           _this.editForm.first_picture = _this.editForm.firstPicture
           let resp2 = await  this.getRequest('/game/getByGameId?id=' + resp.data.data.gameId)

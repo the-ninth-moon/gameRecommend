@@ -43,7 +43,16 @@
             <el-input v-model="editForm.configRequire"></el-input>
           </el-form-item>
           <el-form-item label="首页图片" prop="first_picture">
-            <el-input v-model="editForm.first_picture"></el-input>
+          <el-input v-model="editForm.first_picture"></el-input>
+            <el-upload
+              class="game-uploader"
+              action="/api/upload/game"  
+              :on-success="handleUploadSuccess"
+              :before-upload="beforeUpload"
+              accept="image/*"
+              :show-file-list="false">
+              <el-button size="small" type="primary">上传图片</el-button>
+            </el-upload>
           </el-form-item>
           <el-form-item label="添加图片" prop="imageList">
             <el-button type="primary">添加图片</el-button>
@@ -217,6 +226,22 @@
        this.initType();
       },
       methods: {
+        handleUploadSuccess(response, file, fileList) {
+            // 上传成功后的处理
+            if (response && response.data && response.data.url) {
+              this.editForm.first_picture = response.data.url;  // 设置返回的 URL
+            } else {
+              this.$message.error('头像上传失败');
+            }
+          },
+          beforeUpload(file) {
+            // 可以在此检查文件类型、大小等
+            const isImage = file.type.startsWith('image/');
+            if (!isImage) {
+              this.$message.error('只能上传图片');
+            }
+            return isImage;
+          },
         handleClose(tag) {
           this.editForm.tags.splice(this.editForm.tags.indexOf(tag), 1);
         },

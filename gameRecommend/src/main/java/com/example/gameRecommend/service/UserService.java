@@ -22,4 +22,7 @@ public interface UserService extends IService<User> {
     Result accessUser(String id);
     Result demoteUser(String id);
     Result deleteUser(String id);
+    Result getUserByPhone(String phone);
+
+    Result fupdatePwd(HashMap<String, Object> params);
 }

@@ -40,9 +40,9 @@ axios.interceptors.response.use(success => {
         router.replace('/');
     } else {
         if(error.response.data && error.response.data.msg){
-            ElMessage.error({message: error.response.data.msg});
+            //ElMessage.error({message: error.response.data.msg});
         } else {
-            ElMessage.error({message: "未知错误"});
+            //ElMessage.error({message: "未知错误"});
         }
     }
     return;

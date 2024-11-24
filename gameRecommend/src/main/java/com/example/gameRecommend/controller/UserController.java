@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 /**
  * <p>
@@ -54,6 +55,11 @@ public class UserController {
         return userService.updatePwd(params);
     }
 
+    @PostMapping("/fupdatePwd")
+    public Result fupdatePwd(@RequestBody HashMap<String,Object> params){
+        return userService.fupdatePwd(params);
+    }
+
     @PostMapping("/accessUser")
     public Result accessUser(String id){
         return userService.accessUser(id);
@@ -79,5 +85,76 @@ public class UserController {
     })
     public Result userGetByPage(Long current, Long size, Boolean want){
         return userService.pageUsers(current, size,want);
+    }
+
+    @PostMapping("/sendCaptcha")
+    public Result sendCaptcha(String phoneNumber){
+        Result result = Result.build();
+        if(userService.getUserByPhone(phoneNumber).getCode()==200){
+            result.setCode(200);
+            result.setMsg("发送成功");
+        }
+        else{
+            result.setCode(500);
+            result.setMsg("尚未注册");
+        }
+        return result;
+    }
+
+    @PostMapping("/rsendCaptcha")
+    public Result rsendCaptcha(String phoneNumber){
+        Result result = Result.build();
+        if(userService.getUserByPhone(phoneNumber).getCode()==200){
+            result.setCode(500);
+            result.setMsg("已经注册");
+        }
+        else{
+            //api发送验证码
+            //后端做持久化处理
+            result.setCode(200);
+            result.setMsg("发送成功");
+
+        }
+        return result;
+    }
+
+    @PostMapping("/verifyCaptcha")
+    public Result verifyCaptcha(String phoneNumber,String verificationCode){
+        Result result = Result.build();
+        //从后端持久化中拿出数据
+        if(Objects.equals(verificationCode, "1234")){
+            result.setCode(200);
+            result.setMsg("验证成功");
+            return result;
+        }
+        else{
+            result.setCode(500);
+            result.setMsg("验证失败");
+        }
+        return result;
+    }
+
+    @PostMapping("/loginverifyCaptcha")
+    public Result loginverifyCaptcha(String phoneNumber,String verificationCode){
+        Result result = Result.build();
+        if(Objects.equals(verificationCode, "1234")){
+            result.setCode(200);
+            result.setMsg("验证成功");
+            result.setData(userService.getUserByPhone(phoneNumber).getData());
+            return result;
+        }
+        else{
+            result.setCode(500);
+            result.setMsg("验证失败");
+        }
+        return result;
+    }
+
+    @PostMapping("/rverifyCaptcha")
+    public Result rverifyCaptcha(String phoneNumber,String verificationCode){
+        Result result = Result.build();
+        result.setCode(200);
+        result.setMsg("发送成功");
+        return result;
     }
 }

@@ -51,9 +51,30 @@
     props: ["tindex"],
     mounted() {
       this.initIndex();
+      this.currentPage = this.getContextData("currentBPage") || 1;
       this.initBlogs(); // 调用初始化博客数据
     },
     methods: {
+              //给sessionStorage存值
+              setContextData: function (key, value) {
+        if (typeof value == "string") {
+            sessionStorage.setItem(key, value);
+        } else {
+            sessionStorage.setItem(key, JSON.stringify(value));
+        }
+    },
+        // 从sessionStorage取值
+        getContextData: function (key) {
+            const str = sessionStorage.getItem(key);
+            if (typeof str == "string") {
+                try {
+                    return JSON.parse(str);
+                } catch (e) {
+                    return str;
+                }
+            }
+            return;
+        },
       initIndex() {
         this.t2index = this.tindex; // 保存父组件传过来的值
       },
@@ -74,6 +95,7 @@
       handleCurrentChange(val) {
         console.log(`当前页: ${val}`);
         this.currentPage = val;
+        this.setContextData("currentBPage",this.currentPage);
         this.initBlogs();
       },
       handleSizeChange(val) {

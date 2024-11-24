@@ -59,9 +59,19 @@
     
   },
     methods:{
+          //给sessionStorage存值
+    setContextData: function (key, value) {
+        if (typeof value == "string") {
+            sessionStorage.setItem(key, value);
+        } else {
+            sessionStorage.setItem(key, JSON.stringify(value));
+        }
+    },
     // 获取标签栏的index,就是原创，转载什么的
     handleClick(tab, event) {
         this.tabindex = tab.index
+        this.setContextData("currentBPage",1);
+        this.setContextData("currentPage",1);
         //console.log("tabindex = " + this.tabindex);
     },
     sortGames(type) {
