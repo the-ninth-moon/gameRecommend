@@ -1,5 +1,5 @@
 <template>
-    <div class="m_container">
+    <div class="m_container1">
      
       <!-- 游戏内容 -->
       <div class="m_content">

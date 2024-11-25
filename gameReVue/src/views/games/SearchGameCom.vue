@@ -61,6 +61,64 @@
     },
     props:["gamesData"], //接收父组件传过来的值
     methods:{
+            //删除游戏(逻辑删除)
+    logicDeleteGame(id){
+      const _this = this
+      this.$confirm('此操作将移入回收站, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          //console.log("逻辑删除",id);
+          this.deleteRequest('/game/logicDeleteGame?id=' + id).then(resp=>{
+            //alert("删除成功！")
+            location.reload(true); // 刷新当前页面
+          })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          });          
+        });
+    },
+    //彻底删除游戏
+    deleteGame(id){
+      const _this = this
+      this.$confirm('此操作将彻底删除该文章, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.deleteRequest('/game/deletegame?id=' + id).then(resp=>{
+            alert("删除成功！")
+            location.reload(true); // 刷新当前页面
+          })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消删除'
+          });          
+        });
+    },
+    //还原游戏
+    recoveryGame(id){
+      const _this = this
+      this.$confirm('确定要还原该游戏吗?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.getRequest('/game/recoveryGame?id=' + id).then(resp=>{
+            //alert("还原成功！")
+            location.reload(true); // 刷新当前页面
+          })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消还原'
+          });          
+        });
+    },
     }
   }
   </script>

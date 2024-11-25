@@ -1,5 +1,5 @@
 <template>
-  <div class="m_container">
+  <div class="111r">
    
     <!-- 博客内容 -->
     <div class="m_content">
@@ -234,6 +234,8 @@
 <style>
   .m_container{
     margin-top: 20px;
+    padding: 0px;
+    margin: 0px;
   }
   .el-tag + .el-tag {
     margin-left: 10px;

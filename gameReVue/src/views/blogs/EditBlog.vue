@@ -1,5 +1,5 @@
 <template>
-    <div class="m_container">
+    <div class="m_container1">
      
      <!-- 博客内容 -->
      <div class="m_content">
