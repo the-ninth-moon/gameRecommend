@@ -80,7 +80,9 @@ methods: {
     goBack() {
     this.$router.go(-1);
     },
-
+    viewBlog(id) {
+    this.$router.push({ path: `/pblogs/${id}` });
+    }
 }
 };
 </script>

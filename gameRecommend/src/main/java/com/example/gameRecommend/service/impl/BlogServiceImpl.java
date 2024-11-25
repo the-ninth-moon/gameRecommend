@@ -359,7 +359,10 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     public Result getByBlogId(String id) {
         Result result = Result.build();
         result.setCode(200);
-        result.setData(tBlogMapper.getByBlogId(id));
+        Blog blog = tBlogMapper.selectById(id);
+        blog.setViews(blog.getViews() + 1);
+        tBlogMapper.updateById(blog);
+        result.setData(blog);
         return result;
     }
 

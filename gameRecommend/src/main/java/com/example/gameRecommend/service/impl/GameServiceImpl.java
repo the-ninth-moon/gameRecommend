@@ -402,7 +402,11 @@ public class GameServiceImpl extends ServiceImpl<GameMapper, Game> implements Ga
     public Result getByGameId(String id) {
         Result result = Result.build();
         result.setCode(200);
-        result.setData(tGameMapper.selectById(id));
+        Game game = tGameMapper.selectById(id);
+        game.setViews(game.getViews() + 1);
+        tGameMapper.updateById(game);
+        result.setData(game);
+
         return result;
     }
     @Override

@@ -10,7 +10,7 @@
           <img :src="blog.data.firstPicture" alt="Blog Cover" class="blog-cover" />
           <div class="blog-content">
             <h3>{{ blog.data.title }}</h3>
-            <p class="blog-date">{{ formatDate(blog.updateTime) }}</p>
+            <p class="blog-date">{{ formatDate(blog.data.updateTime) }}</p>
             <p class="blog-description">{{ blog.data.content.slice(0, 30) }}...</p>
             <el-button @click="viewBlog(blog.data.id)" type="primary" size="small">阅读更多</el-button>
           </div>
@@ -80,7 +80,9 @@
       goBack() {
         this.$router.go(-1);
       },
-
+      viewBlog(id) {
+    this.$router.push({ path: `/blogs/${id}` });
+    }
     }
   };
   </script>

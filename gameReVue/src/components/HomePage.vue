@@ -168,16 +168,7 @@ export default {
   cursor: pointer;
 }
 
-/* Logo 样式 */
-.logo {
-  font-size: 1.8rem;
-  color: #ecf0f1; /* 文字颜色 */
-  font-weight: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-  margin-right: 30%;
-  width: 30%;
-}
+
 
 /* 导航链接容器样式 */
 .nav-links {

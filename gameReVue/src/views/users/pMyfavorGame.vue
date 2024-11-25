@@ -16,7 +16,7 @@
                         <el-icon><Calendar /></el-icon>
                         <span style="margin-left: 5px;">{{ game.data.sellTime }}</span>
                     </div>
-                    <router-link :to=" '/games/' + game.data.id ">
+                    <router-link :to=" '/pgames/' + game.data.id ">
                     <el-button type="primary">阅读更多</el-button>
                     </router-link>
                 </div>

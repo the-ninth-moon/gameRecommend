@@ -44,6 +44,17 @@ public class Game implements Serializable {
     @TableField("name")
     private String name;
 
+    public int getViews() {
+        return views;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
+    }
+
+    @TableField("views")
+    private int views;
+
     /**
      * 游戏分类id
      */

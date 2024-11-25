@@ -41,6 +41,18 @@ public class Blog implements Serializable {
     @TableField("title")
     private String title;
 
+
+    public int getViews() {
+        return views;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
+    }
+
+    @TableField("views")
+    private int views;
+
     /**
      * ???
      */

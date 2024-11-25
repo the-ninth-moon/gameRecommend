@@ -33,7 +33,7 @@ router.beforeEach((to,from,next)=>{
     //to: 将要去哪里  from: 从哪里来的  next: 下一步，放行
     //如果要去的页面是Login页，直接放行
 
-    if(to.path=='/' || to.path=='/login'||to.path=='/home'||to.path=='/phome'|| to.path=='/plogin'
+    if(to.path=='/' || to.path=='/login'||to.path=='/home'||to.path=='/phome'|| to.path=='/plogin'|| to.path=='/about'
        || to.path=='/login/resetPassWord'  || to.path=='/login/register' || to.path=='/plogin/resetPassWord'  || to.path=='/plogin/register'
        || to.path=='/login/phoneLogin'  || to.path=='/plogin/phoneLogin'){
         next();
